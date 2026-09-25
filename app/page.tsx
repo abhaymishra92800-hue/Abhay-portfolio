@@ -3,7 +3,7 @@ import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import VideoGrid from "@/components/VideoGrid";
 import { longFormVideos, shortFormVideos } from "@/lib/videos";
-import { site, services, beliefs } from "@/lib/site";
+import { site, services } from "@/lib/site";
 
 
 const stats = [
@@ -19,17 +19,15 @@ export default function Home() {
       <div className="ambient-glow-2 top-1/2 -right-24"></div>
 
       {/* ─── HERO ─── */}
-      <section className="relative bg-gradient-to-br from-orange-50 via-purple-100 to-purple-300 pt-32 pb-16 border-b border-outline-variant/30">
+      <section className="relative bg-gradient-to-br from-orange-50 via-purple-100 to-purple-300 pt-24 lg:pt-28 pb-14 border-b border-outline-variant/30">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16 flex flex-col-reverse lg:flex-row items-center gap-12">
           <div className="w-full lg:w-1/2">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-on-surface leading-[1.1] tracking-tight mb-5">
-              Hi, I&apos;m Abhay.
-              <br />
-              <span className="gradient-text">I edit videos and run social media.</span>
+              Videos that keep people <span className="gradient-text">watching.</span>
             </h1>
             <p className="text-lg md:text-xl text-on-surface-variant mb-8 max-w-xl leading-relaxed">
-              Video editor and social media manager for creators and founders. Long-form YouTube,
-              shorts, LinkedIn, and the content systems that keep them shipping.
+              I&apos;m Abhay. I edit videos and run YouTube and LinkedIn for creators and founders,
+              so your content earns more views, more watch time, and more clients.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 mb-10">
@@ -49,11 +47,11 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 max-w-md">
+            <div className="flex flex-wrap gap-x-10 gap-y-6">
               {stats.map((s) => (
                 <div key={s.label}>
-                  <p className="text-3xl font-extrabold text-on-surface">{s.value}</p>
-                  <p className="text-xs text-on-surface-variant uppercase tracking-wider">{s.label}</p>
+                  <p className="text-4xl md:text-5xl font-extrabold text-on-surface leading-none mb-2">{s.value}</p>
+                  <p className="text-xs md:text-sm text-on-surface-variant uppercase tracking-wider whitespace-nowrap">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -119,14 +117,15 @@ export default function Home() {
           <ScrollReveal stagger>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((s) => (
-                <div
+                <Link
                   key={s.title}
-                  className="reveal glass-card rounded-3xl p-7 border border-outline-variant/40 hover:-translate-y-1 hover:shadow-xl transition-all bg-surface-container-lowest"
+                  href="/services"
+                  className="reveal group block glass-card rounded-3xl p-7 border border-outline-variant/40 hover:border-primary hover:-translate-y-1 hover:shadow-xl transition-all bg-surface-container-lowest"
                 >
                   <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
                     <span className="material-symbols-outlined text-2xl">{s.icon}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-on-surface mb-2">{s.title}</h3>
+                  <h3 className="text-lg font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
                   <p className="text-sm text-on-surface-variant leading-relaxed mb-4">{s.desc}</p>
                   <div className="flex flex-wrap gap-2">
                     {s.tools.map((t) => (
@@ -135,30 +134,7 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ─── HOW I WORK ─── */}
-      <section className="py-20">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
-          <ScrollReveal>
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">How I work</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-on-surface">Brief first, systems always</h2>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal stagger>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {beliefs.map((b) => (
-                <div key={b.title} className="reveal glass-card rounded-3xl p-7">
-                  <span className="material-symbols-outlined text-primary text-3xl mb-3 block">{b.icon}</span>
-                  <h3 className="text-lg font-bold text-on-surface mb-2">{b.title}</h3>
-                  <p className="text-sm text-on-surface-variant leading-relaxed">{b.desc}</p>
-                </div>
+                </Link>
               ))}
             </div>
           </ScrollReveal>
