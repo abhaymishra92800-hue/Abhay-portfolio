@@ -1,11 +1,13 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import { AbTest } from "@/components/AbTest";
 import { EmailCapture } from "@/components/EmailCapture";
+import VideoGrid from "@/components/VideoGrid";
+import { longFormVideos, shortFormVideos } from "@/lib/videos";
 
 const trustLogos = [
   { name: "Victor Chan", role: "Launch Excel", image: "https://anuj4u.in/wp-content/uploads/2025/03/victor-chan.jpg" },
@@ -90,30 +92,6 @@ const caseStudies = [
   },
 ];
 
-const testimonials = [
-  {
-    name: "Harjeet Dhillon",
-    role: "Canadian actress and author",
-    image: "https://anuj4u.in/wp-content/uploads/2025/03/harjeet-dhillon-1-1.png",
-    quote:
-      "Anuj has been monumental in creating my podcast. He has a solid work ethic, is awesome at receiving feedback, and his work speaks for itself. I would highly recommend hiring Anuj for anything social media.",
-  },
-  {
-    name: "Dr. Maurice Maurer",
-    role: "Scientist and YouTube educator",
-    image: "https://anuj4u.in/wp-content/uploads/2025/03/maurice-maurer-1.png",
-    quote:
-      "Anuj has been a game-changer for my video production, handling both long-form YouTube edits and sales-page VSLs with excellent results. Fast, reliable, and easy to work with.",
-  },
-  {
-    name: "Blake Reddy",
-    role: "Wealth adviser and podcast host",
-    image: "https://anuj4u.in/wp-content/uploads/2025/03/blake-pic-website-1-1.png",
-    quote:
-      "Anuj helped create video layouts for my podcast which look great and work perfectly whilst saving me so much time. Generous with his time and would highly recommend.",
-  },
-];
-
 const freeTools = [
   {
     title: "LinkedIn Funnel",
@@ -156,39 +134,7 @@ const processSteps = [
   },
 ];
 
-const marqueeTestimonials = [
-  { name: "Victor Chan", role: "Founder, Launch Excel", quote: "Anuj has been a game-changer for my video production, handling both long-form YouTube edits and sales-page VSLs with excellent results. I look forward to working with him some more." },
-  { name: "Harjeet Dhillon", role: "Actress & Author", quote: "Anuj has been monumental in creating my podcast. He has a solid work ethic and is awesome at receiving feedback. I am so glad I worked with him." },
-  { name: "Dr. Maurice Maurer", role: "Science Educator", quote: "The quality of edits and strategic inputs on content packaging have significantly boosted our channel retention. Creative, innovative, and brilliant ideas." },
-];
-
-const videoTestimonials = [
-  { name: "Victor Chan", role: "Founder, Launch Excel", videoId: "y11b_rVHcyg", quote: "The VSL re-cut drove a 38% increase in course signups." },
-  { name: "Dr. Maurice Maurer", role: "Science Educator", videoId: "izidLZclYZs", quote: "The episode edit with motion graphics was exceptional." },
-  { name: "Harjeet Dhillon", role: "Author & Actress", videoId: "Cd4YRPSLBVE", quote: "Multi-cam interview with captions and B-roll — perfectly done." },
-];
-
 export default function Home() {
-  const marqueeRef = useRef<HTMLElement>(null);
-  const [marqueePaused, setMarqueePaused] = useState(false);
-
-  useEffect(() => {
-    const el = marqueeRef.current;
-    if (!el) return;
-    if (
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      return;
-    }
-    const observer = new IntersectionObserver(
-      ([entry]) => setMarqueePaused(!entry.isIntersecting),
-      { threshold: 0 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <div className="relative overflow-hidden">
       {/* Background ambient light */}
@@ -263,7 +209,7 @@ export default function Home() {
                 <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-tr from-indigo-100 via-purple-50 to-pink-50">
 <Image
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuApVgUM1CPI-chpiQnnacQOAazwKAIf2X5MgiRD1canwHi3-PNyeCAN1VYG06tYjQXLskeEt_ktPsUvDxxN_L9Ohk4yupNmlg-bnC10qZyeDx8ECQZEKVtWU5uq9eVhCx-qcTE5wosJfkt6NTN6fw9c2ZtGqxAoEYBnAnJcnKUPeyciq0_zM4K1C4Dtx2W0MJQ8MRGsfWMx0jiAQKjKTIiW7Jelor9RbkB7lzUza283dH10yzGnlDwkwt3iQtBL7DGOtn_1Z9OgjKUy2mg"
-                      alt="Anuj Mishra"
+                      alt="Abhay Mishra"
                       fill
                       sizes="(max-width: 1024px) 50vw, 33vw"
                       className="object-cover object-top hover:scale-105 transition-transform duration-700"
@@ -277,7 +223,7 @@ export default function Home() {
                         AM
                       </div>
                       <div className="min-w-0">
-                        <h4 className="font-bold text-on-surface text-sm leading-tight">Anuj Mishra</h4>
+                        <h4 className="font-bold text-on-surface text-sm leading-tight">Abhay Mishra</h4>
                         <p className="text-xs text-on-surface-variant leading-tight">Content operator & growth partner</p>
                       </div>
                     </div>
@@ -475,117 +421,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── TESTIMONIALS ─── */}
-      <section className="py-20 bg-surface-container-low/40">
+      {/* ─── VIDEO PORTFOLIO ─── */}
+      <section id="videos" className="py-20 bg-surface-container-low/40">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
           <ScrollReveal>
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">
-                What clients say
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-4">
-                Real notes from people I have worked with
-              </h2>
-              <p className="text-on-surface-variant text-base md:text-lg">
-                Direct quotes from the people who hired me.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal stagger>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {testimonials.map((t) => (
-                <article
-                  key={t.name}
-                  className="reveal glass-card rounded-3xl overflow-hidden border border-outline-variant/50 hover:-translate-y-1 hover:shadow-2xl transition-all bg-surface-container-lowest"
-                >
-                  <div className="p-7">
-                    <span className="material-symbols-outlined text-primary/40 text-4xl leading-none mb-3 block">
-                      format_quote
-                    </span>
-                    <p className="text-on-surface leading-relaxed text-[15px] mb-6">
-                      {t.quote}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3 px-7 py-5 border-t border-outline-variant/30 bg-surface-container-low/30">
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20 shrink-0">
-                      <Image
-                        src={t.image}
-                        alt={t.name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="min-w-0">
-                      <p className="font-bold text-on-surface text-sm leading-tight">
-                        {t.name}
-                      </p>
-                      <p className="text-xs text-on-surface-variant leading-tight">
-                        {t.role}
-                      </p>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ─── VIDEO SHOWCASE ─── */}
-      <ScrollReveal>
-        <section className="py-20 bg-surface-container-low/40">
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
             <div className="text-center max-w-2xl mx-auto mb-12">
               <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">
                 Watch the work
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-4">
-                Video portfolio highlights
+                Video portfolio
               </h2>
               <p className="text-on-surface-variant text-base md:text-lg">
-                A selection of recent projects. Full videos linked to YouTube.
+                Long-form edits, podcasts, and explainers. Click any video to play it here.
               </p>
             </div>
-          </div>
-        </section>
-      </ScrollReveal>
+          </ScrollReveal>
+          <VideoGrid videos={longFormVideos} />
 
-      <ScrollReveal stagger>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1400px] mx-auto px-6 lg:px-16 mb-16">
-          {videoTestimonials.map((vt) => (
-            <a
-              key={vt.videoId}
-              href={`https://www.youtube.com/watch?v=${vt.videoId}`}
-              target="_blank"
-              rel="noreferrer"
-              className="group block glass-card rounded-2xl overflow-hidden border border-outline-variant/40 hover:-translate-y-1 hover:shadow-xl transition-all"
-            >
-              <div className="relative aspect-video bg-black">
-                <Image
-                  src={`https://img.youtube.com/vi/${vt.videoId}/hqdefault.jpg`}
-                  alt={vt.name}
-                  fill
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                  className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-white text-5xl drop-shadow-lg group-hover:scale-110 transition-transform" aria-hidden="true">
-                    play_circle
-                  </span>
-                </div>
-              </div>
-              <div className="p-5">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">
-                  {vt.name}
-                </p>
-                <h3 className="text-base font-bold text-on-surface mb-1">{vt.quote}</h3>
-              </div>
-            </a>
-          ))}
+          <div className="text-center max-w-2xl mx-auto mt-20 mb-10">
+            <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">
+              Short-form
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-on-surface">
+              Shorts and reels
+            </h2>
+          </div>
+          <VideoGrid videos={shortFormVideos} vertical />
         </div>
-      </ScrollReveal>
+      </section>
 
       {/* ─── FREE TOOLS ─── */}
       <section className="py-16 bg-surface-container-low/40">
@@ -677,45 +541,6 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* ─── TESTIMONIALS MARQUEE ─── */}
-      <section
-        ref={marqueeRef}
-        data-marquee-paused={marqueePaused ? "true" : "false"}
-        className="py-16 bg-surface overflow-hidden border-b border-outline-variant/30"
-      >
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-16 mb-10">
-          <div className="text-center w-full">
-            <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">
-              Client Success Stories
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-on-surface">
-              What clients actually say
-            </h2>
-          </div>
-        </div>
-
-<div className="relative flex overflow-x-hidden group py-4">
-           <div className="animate-marquee flex whitespace-nowrap gap-6 px-3 group-hover:[animation-play-state:paused]">
-            {[...Array(2)].map((_, i) => (
-              <React.Fragment key={i}>
-                {marqueeTestimonials.map((t) => (
-                  <div key={t.name} className="w-[400px] flex-shrink-0 bg-white shadow-xl rounded-2xl p-8 relative whitespace-normal">
-                    <p className="text-on-surface-variant text-sm leading-relaxed mb-6">
-                      &quot;{t.quote}&quot;
-                    </p>
-                    <div className="flex flex-col items-center gap-1 pt-4 text-center border-t border-outline-variant/20">
-                      <h4 className="font-bold text-on-surface text-sm">{t.name}</h4>
-                      <p className="text-xs text-on-surface-variant">{t.role}</p>
-                    </div>
-                  </div>
-                ))}
-              </React.Fragment>
-            ))}
-          </div>
-          <div className="absolute top-0 left-0 h-full w-24 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none"></div>
-        </div>
-      </section>
 
       {/* ─── BOTTOM CTA ─── */}
       <ScrollReveal>

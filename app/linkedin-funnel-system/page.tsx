@@ -3,18 +3,18 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "LinkedIn Funnel System | Anuj Mishra",
+  title: "LinkedIn Funnel System | Abhay Mishra",
   description: "A complete LinkedIn lead generation system for coaches, consultants, and B2B founders. Profile rewrite, content pillars, and a posting rhythm that turns views into booked calls.",
   alternates: { canonical: "/linkedin-funnel-system" },
   openGraph: {
-    title: "LinkedIn Funnel System | Anuj Mishra",
+    title: "LinkedIn Funnel System | Abhay Mishra",
     description: "Turn LinkedIn views into booked calls. A complete system, $800/mo.",
-    url: "https://anuj4u.in/linkedin-funnel-system",
+    url: "https://abhay-portfolio.vercel.app/linkedin-funnel-system",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "LinkedIn Funnel System | Anuj Mishra",
+    title: "LinkedIn Funnel System | Abhay Mishra",
     description: "Turn LinkedIn views into booked calls. A complete system, $800/mo.",
   },
 };
@@ -260,7 +260,7 @@ export default function LinkedInFunnelSystemPage() {
               format_quote
             </span>
             <p className="text-on-surface text-base md:text-lg italic leading-relaxed mb-6">
-              &ldquo;Anuj has been a game-changer for my video production,
+              &ldquo;Abhay has been a game-changer for my video production,
               handling both long-form YouTube edits and sales-page VSLs with
               excellent results. His fast, reliable WhatsApp communication
               saves me days every week.&rdquo;
@@ -277,7 +277,7 @@ export default function LinkedInFunnelSystemPage() {
               format_quote
             </span>
             <p className="text-on-surface text-base md:text-lg italic leading-relaxed mb-6">
-              &ldquo;Anuj helped create video layouts for my podcast which look
+              &ldquo;Abhay helped create video layouts for my podcast which look
               great and work perfectly whilst saving me so much time. Generous
               with his time and would highly recommend.&rdquo;
             </p>

@@ -4,18 +4,18 @@ import type { Metadata } from "next";
 import FAQAccordion from "@/components/FAQAccordion";
 
 export const metadata: Metadata = {
-  title: "Services & Pricing | Anuj Mishra",
+  title: "Services & Pricing | Abhay Mishra",
   description: "Three productized content services for coaches, authors, and founders. LinkedIn Funnel System $800/mo, Content Engine $2,500/mo, Content Production System $1,500/mo.",
   alternates: { canonical: "/services" },
   openGraph: {
-    title: "Services & Pricing | Anuj Mishra",
+    title: "Services & Pricing | Abhay Mishra",
     description: "Three productized services with transparent monthly pricing.",
-    url: "https://anuj4u.in/services",
+    url: "https://abhay-portfolio.vercel.app/services",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Services & Pricing | Anuj Mishra",
+    title: "Services & Pricing | Abhay Mishra",
     description: "Three productized services with transparent monthly pricing.",
   },
 };

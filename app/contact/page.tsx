@@ -86,7 +86,7 @@ function ContactForm() {
     } catch (err: unknown) {
       console.error("Error submitting contact form:", err);
       const message = err instanceof Error ? err.message : "Something went wrong.";
-      setError(message || "Something went wrong. Please try again or email me directly at contact@anuj4u.in.");
+      setError(message || "Something went wrong. Please try again or email me directly at abhaymishra92800@gmail.com.");
     } finally {
       setLoading(false);
     }
@@ -183,7 +183,7 @@ function ContactForm() {
               WhatsApp me
             </a>
             <a
-              href="mailto:contact@anuj4u.in"
+              href="mailto:abhaymishra92800@gmail.com"
               className="inline-flex items-center gap-2 bg-surface border border-outline-variant hover:border-primary text-on-surface font-bold px-6 py-3 rounded-full hover:scale-105 transition-all text-sm"
             >
               <span className="material-symbols-outlined text-base">mail</span>
@@ -206,16 +206,16 @@ function ContactForm() {
             <h3 className="text-2xl font-bold text-on-surface mb-2">Email me directly</h3>
             <p className="text-on-surface-variant text-sm mb-4">I aim to respond within 24 hours.</p>
             <a
-              href="mailto:contact@anuj4u.in"
+              href="mailto:abhaymishra92800@gmail.com"
               className="text-lg font-bold text-primary hover:underline decoration-primary/50 block"
             >
-              contact@anuj4u.in
+              abhaymishra92800@gmail.com
             </a>
             <a
-              href="mailto:bg4uanujofficial@gmail.com"
+              href="mailto:abhaymishra92800@gmail.com"
               className="text-xs font-semibold text-on-surface-variant hover:text-primary mt-1 block"
             >
-              bg4uanujofficial@gmail.com
+              abhaymishra92800@gmail.com
             </a>
           </div>
 
@@ -291,7 +291,7 @@ function ContactForm() {
               </span>
               <h3 className="text-xl font-bold text-emerald-950 mb-2">Message Sent Successfully!</h3>
               <p className="text-emerald-800 text-sm mb-6">
-                Thank you for reaching out. Anuj will get back to you shortly.
+                Thank you for reaching out. Abhay will get back to you shortly.
               </p>
               <button
                 onClick={() => setSuccess(false)}

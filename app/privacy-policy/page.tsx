@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Anuj Mishra",
+  title: "Privacy Policy | Abhay Mishra",
   description:
-    "How Anuj Mishra (anuj4u.in) collects, uses, and protects your data — including contact forms, the LinkedIn content funnel, email communications, and privacy-friendly analytics.",
+    "How Abhay Mishra (abhay-portfolio.vercel.app) collects, uses, and protects your data — including contact forms, the LinkedIn content funnel, email communications, and privacy-friendly analytics.",
 };
 
 function Section({
@@ -44,14 +44,14 @@ export default function PrivacyPolicyPage() {
 
         <Section title="1. Who We Are">
           <p>
-            This website (anuj4u.in) is operated by Anuj Mishra, a video editor
+            This website (abhay-portfolio.vercel.app) is operated by Abhay Mishra, a video editor
             and growth marketing specialist. For any privacy question, contact us
             at{" "}
             <a
-              href="mailto:contact@anuj4u.in"
+              href="mailto:abhaymishra92800@gmail.com"
               className="text-primary font-semibold hover:underline"
             >
-              contact@anuj4u.in
+              abhaymishra92800@gmail.com
             </a>
             .
           </p>
@@ -129,10 +129,10 @@ export default function PrivacyPolicyPage() {
             You may request access to, correction of, or deletion of your
             personal data at any time by emailing{" "}
             <a
-              href="mailto:contact@anuj4u.in"
+              href="mailto:abhaymishra92800@gmail.com"
               className="text-primary font-semibold hover:underline"
             >
-              contact@anuj4u.in
+              abhaymishra92800@gmail.com
             </a>
             .
           </p>

@@ -273,7 +273,7 @@ export default function ReelHooksPage() {
                     href="/contact"
                     className="inline-flex items-center justify-center gap-2 bg-[#6355ff] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#6355ff]/90 transition-all text-sm"
                   >
-                    Work with Anuj
+                    Work with Abhay
                   </Link>
                 </div>
               </div>

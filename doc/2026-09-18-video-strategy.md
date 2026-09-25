@@ -2,7 +2,7 @@
 
 ## Overview
 
-This plan details how to add short reels and videos to the Anuj 4u website to showcase work and attract clients. Three formats are recommended: motion graphics videos, AI-generated videos, and engaging short reels.
+This plan details how to add short reels and videos to the Abhay 4u website to showcase work and attract clients. Three formats are recommended: motion graphics videos, AI-generated videos, and engaging short reels.
 
 ---
 

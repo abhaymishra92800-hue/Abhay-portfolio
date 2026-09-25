@@ -14,7 +14,7 @@ interface RequestBody {
 /**
  * Fire-and-forget analytics for the Ad ROI calculator.
  * No email capture — this is a pure client-side tool. We only log
- * usage to Google Sheets (when configured) so Anuj can see what
+ * usage to Google Sheets (when configured) so Abhay can see what
  * numbers visitors are testing.
  */
 export async function POST(req: NextRequest) {

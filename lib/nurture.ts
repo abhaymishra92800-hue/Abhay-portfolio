@@ -36,7 +36,7 @@ function shell(title: string, inner: string): string {
 <body style="margin:0;padding:0;background:#f3f4f6;font-family:'Segoe UI',Helvetica,Arial,sans-serif;">
   <div style="background:linear-gradient(135deg,#0A66C2 0%,#6355FF 100%);padding:36px 24px;text-align:center;">
     <div style="display:inline-block;background:rgba(255,255,255,0.15);border-radius:12px;padding:8px 20px;margin-bottom:16px;">
-      <span style="color:rgba(255,255,255,0.9);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;">Anuj Mishra · LinkedIn Growth</span>
+      <span style="color:rgba(255,255,255,0.9);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;">Abhay Mishra · LinkedIn Growth</span>
     </div>
     <h1 style="color:white;font-size:24px;font-weight:800;margin:0;line-height:1.25;">${title}</h1>
   </div>
@@ -45,11 +45,11 @@ function shell(title: string, inner: string): string {
     <div style="background:linear-gradient(135deg,#1c1b1c,#2d1e6e);border-radius:16px;padding:28px;text-align:center;margin:24px 0;">
       <h3 style="color:white;font-size:18px;font-weight:800;margin:0 0 12px;">Want this done for you?</h3>
       <p style="color:rgba(255,255,255,0.75);font-size:14px;margin:0 0 20px;line-height:1.6;">I help creators and founders build a LinkedIn presence that actually converts.</p>
-      <a href="https://anuj4u.in/contact" style="display:inline-block;background:#0A66C2;color:white;font-weight:700;padding:13px 28px;border-radius:12px;text-decoration:none;font-size:15px;">Book a Strategy Call →</a>
+      <a href="https://abhay-portfolio.vercel.app/contact" style="display:inline-block;background:#0A66C2;color:white;font-weight:700;padding:13px 28px;border-radius:12px;text-decoration:none;font-size:15px;">Book a Strategy Call →</a>
     </div>
     <div style="text-align:center;padding:16px 0 36px;color:#9ca3af;font-size:12px;">
-      <p style="margin:0 0 4px;">Anuj Mishra · contact@anuj4u.in · <a href="https://anuj4u.in" style="color:#6355FF;">anuj4u.in</a></p>
-      <p style="margin:0;">You received this because you requested a LinkedIn content plan from anuj4u.in</p>
+      <p style="margin:0 0 4px;">Abhay Mishra · abhaymishra92800@gmail.com · <a href="https://abhay-portfolio.vercel.app" style="color:#6355FF;">abhay-portfolio.vercel.app</a></p>
+      <p style="margin:0;">You received this because you requested a LinkedIn content plan from abhay-portfolio.vercel.app</p>
     </div>
   </div>
 </body>

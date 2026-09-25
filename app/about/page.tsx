@@ -4,19 +4,19 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Anuj Mishra | Content Operator & Growth Partner",
-  description: "Anuj Mishra runs content operations for coaches, authors, and founders across YouTube and LinkedIn. Founder of Anuj 4u, working with clients worldwide.",
+  title: "About Abhay Mishra | Content Operator & Growth Partner",
+  description: "Abhay Mishra runs content operations for coaches, authors, and founders across YouTube and LinkedIn. Founder of Abhay 4u, working with clients worldwide.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Anuj Mishra | Content Operator & Growth Partner",
-    description: "Founder of Anuj 4u. Runs content operations for coaches, authors, and founders across YouTube and LinkedIn.",
-    url: "https://anuj4u.in/about",
+    title: "About Abhay Mishra | Content Operator & Growth Partner",
+    description: "Founder of Abhay 4u. Runs content operations for coaches, authors, and founders across YouTube and LinkedIn.",
+    url: "https://abhay-portfolio.vercel.app/about",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Anuj Mishra | Content Operator & Growth Partner",
-    description: "Founder of Anuj 4u. Runs content operations for coaches, authors, and founders across YouTube and LinkedIn.",
+    title: "About Abhay Mishra | Content Operator & Growth Partner",
+    description: "Founder of Abhay 4u. Runs content operations for coaches, authors, and founders across YouTube and LinkedIn.",
   },
 };
 
@@ -50,7 +50,7 @@ const milestones = [
     year: "Now",
     title: "Content operator & growth partner",
     desc: "I run end-to-end content operations for a small number of clients — YouTube, LinkedIn, and paid media. The work is the same as what I built for my own channels: a system that ships every week.",
-    tag: "Founder, Anuj 4u",
+    tag: "Founder, Abhay 4u",
   },
   {
     year: "2021 — 2023",
@@ -92,7 +92,7 @@ export default function AboutPage() {
             About
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold text-on-surface leading-tight">
-            Hi, I&apos;m <span className="gradient-text">Anuj.</span>
+            Hi, I&apos;m <span className="gradient-text">Abhay.</span>
           </h1>
           <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed max-w-xl">
             I run content operations for coaches, authors, and founders across
@@ -116,7 +116,7 @@ export default function AboutPage() {
             <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-tr from-indigo-100 to-purple-50">
               <Image
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAONq_-LpwLrjyzi_TMnOoIPeIcZ04gIKRPw3fCV_qXZgnCjM4RQf4LG1WlprBdUN2f5R9C4a835k1yK0KWjOE6rB--wLfc277mjI7w2Hc8caPWC5df-o_cL88SOhdo2QCBzsvzUQ3DCgwIPSBk69Ig9xxhJlx0YERJx6KbCY3NICthAi9jb99FKXTxJ6s30R1-GFRfP8dPp2FllUSrzKZO_zEpQfDn2dyXm0_NKNHe0MGlnDZ4i9EwBnW5rw9enozwcNQHwpdEX4Li_N8"
-                alt="Anuj Mishra"
+                alt="Abhay Mishra"
                 fill
                 className="object-cover"
                 priority

@@ -107,14 +107,14 @@ export async function sendFunnelEmail(
   const adminBcc = process.env.ADMIN_EMAIL || undefined;
 
   const payload: Record<string, unknown> = {
-    from: `${params.fromName ?? "Anuj Mishra"} <${fromAddress}>`,
+    from: `${params.fromName ?? "Abhay Mishra"} <${fromAddress}>`,
     to: [params.to],
-    reply_to: params.replyTo ?? "contact@anuj4u.in",
+    reply_to: params.replyTo ?? "abhaymishra92800@gmail.com",
     subject: params.subject,
     html: params.html,
   };
 
-  // BCC Anuj on every submission so he has a full lead log in his inbox
+  // BCC Abhay on every submission so he has a full lead log in his inbox
   if (adminBcc && adminBcc !== params.to) {
     payload.bcc = [adminBcc];
   }

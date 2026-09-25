@@ -1,6 +1,6 @@
-# Anuj 4u — Portfolio & Lead Funnel Website
+# Abhay 4u — Portfolio & Lead Funnel Website
 
-Next.js 14 portfolio for Anuj Mishra with a lead-magnet funnel (LinkedIn content calendar generator) and email pipeline.
+Next.js 14 portfolio for Abhay Mishra with a lead-magnet funnel (LinkedIn content calendar generator) and email pipeline.
 
 ## Stack
 
@@ -28,8 +28,8 @@ Next.js 14 portfolio for Anuj Mishra with a lead-magnet funnel (LinkedIn content
    | --- | --- | --- |
    | `GEMINI_API_KEY` | LinkedIn content generation | Falls back to mock content when missing |
    | `RESEND_API_KEY` | Email delivery | **Hard fails** if missing — must be set |
-   | `RESEND_FROM_EMAIL` | Sender address | Must be `contact@anuj4u.in` once domain is verified |
-   | `ADMIN_EMAIL` | BCC on every form submission | `contact@anuj4u.in` |
+   | `RESEND_FROM_EMAIL` | Sender address | Must be `abhaymishra92800@gmail.com` once domain is verified |
+   | `ADMIN_EMAIL` | BCC on every form submission | `abhaymishra92800@gmail.com` |
    | `GOOGLE_SHEETS_WEBHOOK_URL` | Optional lead log | Google Apps Script webhook |
    | `NEXT_PUBLIC_FIREBASE_*` | Firebase client config | 6 vars, see template |
 
@@ -67,7 +67,7 @@ Set them via the Vercel dashboard or `vercel env` CLI before going live.
 
 ## Lead Funnel Architecture
 
-Every form on the site writes to Firebase and notifies Anuj via email:
+Every form on the site writes to Firebase and notifies Abhay via email:
 
 ```
 Contact form ─┐
@@ -121,9 +121,9 @@ scripts/                # Build-time scripts (e.g. favicon generation)
 
 ## Deployment
 
-Hosted on Vercel. Set the env vars in the Vercel dashboard and connect the GitHub repo at `BA4U/Anuj-new-website`.
+Hosted on Vercel. Set the env vars in the Vercel dashboard and connect the GitHub repo at `BA4U/Abhay-new-website`.
 
 ## Contact
 
-- Email: contact@anuj4u.in
+- Email: abhaymishra92800@gmail.com
 - LinkedIn: https://www.linkedin.com/in/byanuj4u/

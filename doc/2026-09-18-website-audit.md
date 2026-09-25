@@ -1,4 +1,4 @@
-# Anuj 4u Website — Comprehensive Audit & Strategy Plan
+# Abhay 4u Website — Comprehensive Audit & Strategy Plan
 
 **Date:** 2026-09-18  
 **Auditor:** Website Developer Agent  
@@ -55,7 +55,7 @@
 | 4 | **Testimonials are text-only** — No video testimonials, no video clips of clients speaking. Given the site is for a video editor, having static text testimonials is a missed opportunity. | 🟡 High | `page.tsx:93-115` |
 | 5 | **The work page is placeholder-heavy** — `/work/short-form` says "4 videos" but the page just has a generic card. `/work/thumbnails` says "6 thumbnails" but no actual thumbnails are shown. | 🟡 High | `work/short-form/page.tsx`, `work/thumbnails/page.tsx` |
 | 6 | **Multiple "free tools" entries create confusion** — Home page has "Free Tools" section, there's a `/free-tools` page, and `/funnels` page. The `/linkedin-funnel` page and `/linkedin-funnel-system` page serve similar purposes. Users will be confused about which is the "real" funnel. | 🟡 High | `page.tsx`, `free-tools/page.tsx`, `funnels/page.tsx`, `linkedin-funnel/page.tsx`, `linkedin-funnel-system/page.tsx` |
-| 7 | **No blog/thought leadership section** — No place for Anuj to share insights, tutorials, or industry takes. Content creators need a blog to demonstrate expertise. | 🟡 High | N/A |
+| 7 | **No blog/thought leadership section** — No place for Abhay to share insights, tutorials, or industry takes. Content creators need a blog to demonstrate expertise. | 🟡 High | N/A |
 | 8 | **SEO metadata is inconsistent** — Some pages have detailed metadata (`services/page.tsx`, `about/page.tsx`), others are minimal. The home page `description` is good but the `keywords` could be more targeted. | 🟡 Medium | Various |
 | 9 | **The LinkedIn Funnel page has a different value prop than the LinkedIn Funnel System page** — `/linkedin-funnel` is a free tool (AI calendar generator), `/linkedin-funnel-system` is a $800/mo service. They serve different purposes but users won't understand the distinction. | 🟡 Medium | `linkedin-funnel/page.tsx`, `linkedin-funnel-system/page.tsx` |
 | 10 | **No pricing transparency on home page** — The home page shows services with prices but doesn't link clearly. Users must click through to `/services`. | 🟡 Medium | `page.tsx:17-67` |
@@ -164,7 +164,7 @@ The website is for a **video editor** but contains **zero video content**. This 
 2. **Add a "See it in action" video** below the pricing section
 
 #### About Page (`about/page.tsx`)
-1. **Add a short bio video** (30-60s) of Anuj talking about his background
+1. **Add a short bio video** (30-60s) of Abhay talking about his background
 2. **Add video testimonials** from clients alongside text quotes
 3. **Add a "My journey" video timeline** instead of text milestones
 

@@ -45,7 +45,7 @@ export default function Navbar() {
             <span>A</span>
           </div>
           <span className="font-bold text-xl text-on-surface group-hover:text-primary transition-colors duration-300">
-            Anuj Mishra
+            Abhay Mishra
           </span>
         </Link>
 

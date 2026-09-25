@@ -33,7 +33,7 @@ export default function Footer() {
                 A
               </div>
               <span className="font-bold text-xl text-on-surface">
-                Anuj Mishra
+                Abhay Mishra
               </span>
             </div>
             <p className="text-on-surface-variant text-sm leading-relaxed mb-6 max-w-xs">
@@ -41,10 +41,10 @@ export default function Footer() {
               media strategy, and performance marketing.
             </p>
             <a
-              href="mailto:contact@anuj4u.in"
+              href="mailto:abhaymishra92800@gmail.com"
               className="text-sm font-semibold text-primary hover:underline decoration-primary/40"
             >
-              contact@anuj4u.in
+              abhaymishra92800@gmail.com
             </a>
           </div>
 
@@ -102,7 +102,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-purple-300/40 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-on-surface-variant">
-            © {new Date().getFullYear()} Anuj Mishra. All rights reserved.
+            © {new Date().getFullYear()} Abhay Mishra. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link

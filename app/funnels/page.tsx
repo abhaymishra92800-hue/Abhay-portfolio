@@ -5,9 +5,9 @@ import { LinkedInLogo } from "@/components/LinkedInLogo";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Free Growth Tools | Anuj Mishra",
+  title: "Free Growth Tools | Abhay Mishra",
   description:
-    "Free, AI-powered growth tools by Anuj Mishra — LinkedIn content calendar, YouTube retention audit, Reel hook swipe file, and an ad creative ROI calculator. Built to turn content into revenue.",
+    "Free, AI-powered growth tools by Abhay Mishra — LinkedIn content calendar, YouTube retention audit, Reel hook swipe file, and an ad creative ROI calculator. Built to turn content into revenue.",
 };
 
 type Tool = {

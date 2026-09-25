@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
 
     // ── Send email notification to admin (Resend) ──
     const emailHtml = buildContactEmailHtml(body);
-    const adminEmail = process.env.ADMIN_EMAIL || "contact@anuj4u.in";
+    const adminEmail = process.env.ADMIN_EMAIL || "abhaymishra92800@gmail.com";
 
     try {
       await sendFunnelEmail({
@@ -65,7 +65,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json(
           {
             error:
-              "Email service not set up yet. Please contact Anuj directly at contact@anuj4u.in",
+              "Email service not set up yet. Please contact Abhay directly at abhaymishra92800@gmail.com",
           },
           { status: 503 }
         );
@@ -75,7 +75,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: "Your message has been sent. Anuj will get back to you shortly.",
+      message: "Your message has been sent. Abhay will get back to you shortly.",
       firestoreId: firestoreId || undefined,
     });
   } catch (error: unknown) {
@@ -99,7 +99,7 @@ function buildContactEmailHtml(body: ContactRequestBody): string {
   <!-- Header -->
   <div style="background:linear-gradient(135deg,#0A66C2 0%,#6355FF 100%);padding:32px 24px;text-align:center;">
     <h1 style="color:white;font-size:24px;font-weight:800;margin:0;">📬 New Contact Submission</h1>
-    <p style="color:rgba(255,255,255,0.85);font-size:13px;margin:8px 0 0;">via anuj4u.in</p>
+    <p style="color:rgba(255,255,255,0.85);font-size:13px;margin:8px 0 0;">via abhay-portfolio.vercel.app</p>
   </div>
 
   <!-- Body -->
@@ -139,7 +139,7 @@ function buildContactEmailHtml(body: ContactRequestBody): string {
 
   <!-- Footer -->
   <div style="text-align:center;padding:24px 0 40px;color:#9ca3af;font-size:12px;">
-    <p style="margin:0;">Anuj Mishra · contact@anuj4u.in · <a href="https://anuj4u.in" style="color:#6355FF;">anuj4u.in</a></p>
+    <p style="margin:0;">Abhay Mishra · abhaymishra92800@gmail.com · <a href="https://abhay-portfolio.vercel.app" style="color:#6355FF;">abhay-portfolio.vercel.app</a></p>
   </div>
 </body>
 </html>`;

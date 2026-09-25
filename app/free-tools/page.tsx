@@ -4,18 +4,18 @@ import type { Metadata } from "next";
 import { EmailCapture } from "@/components/EmailCapture";
 
 export const metadata: Metadata = {
-  title: "Free Tools | Anuj Mishra",
+  title: "Free Tools | Abhay Mishra",
   description: "Three free tools built from real client work: a LinkedIn funnel planner, a reel hook generator, and a YouTube channel audit. No signup, no fluff.",
   alternates: { canonical: "/free-tools" },
   openGraph: {
-    title: "Free Tools | Anuj Mishra",
+    title: "Free Tools | Abhay Mishra",
     description: "Three free tools built from real client work.",
-    url: "https://anuj4u.in/free-tools",
+    url: "https://abhay-portfolio.vercel.app/free-tools",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Tools | Anuj Mishra",
+    title: "Free Tools | Abhay Mishra",
     description: "Three free tools built from real client work.",
   },
 };

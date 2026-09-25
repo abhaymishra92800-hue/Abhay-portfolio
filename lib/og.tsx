@@ -6,7 +6,7 @@ export const ogContentType = "image/png";
 export function OgImage({
   title,
   subtitle,
-  eyebrow = "Anuj Mishra",
+  eyebrow = "Abhay Mishra",
 }: {
   title: string;
   subtitle?: string;

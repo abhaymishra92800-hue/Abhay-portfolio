@@ -4,18 +4,18 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Thumbnails & Graphics | Anuj Mishra",
-  description: "Custom YouTube thumbnails, channel art, and motion graphics by Anuj Mishra. Built for click-through and brand consistency.",
+  title: "Thumbnails & Graphics | Abhay Mishra",
+  description: "Custom YouTube thumbnails, channel art, and motion graphics by Abhay Mishra. Built for click-through and brand consistency.",
   alternates: { canonical: "/work/thumbnails" },
   openGraph: {
-    title: "Thumbnails & Graphics | Anuj Mishra",
+    title: "Thumbnails & Graphics | Abhay Mishra",
     description: "Custom YouTube thumbnails and channel graphics.",
-    url: "https://anuj4u.in/work/thumbnails",
+    url: "https://abhay-portfolio.vercel.app/work/thumbnails",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Thumbnails & Graphics | Anuj Mishra",
+    title: "Thumbnails & Graphics | Abhay Mishra",
     description: "Custom YouTube thumbnails and channel graphics.",
   },
 };

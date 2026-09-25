@@ -3,18 +3,18 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Work | Anuj Mishra",
-  description: "Long-form edits, short-form reels, thumbnails, and channel case studies by Anuj Mishra.",
+  title: "Work | Abhay Mishra",
+  description: "Long-form edits, short-form reels, thumbnails, and channel case studies by Abhay Mishra.",
   alternates: { canonical: "/work" },
   openGraph: {
-    title: "Work | Anuj Mishra",
+    title: "Work | Abhay Mishra",
     description: "Long-form edits, short-form reels, thumbnails, and channel case studies.",
-    url: "https://anuj4u.in/work",
+    url: "https://abhay-portfolio.vercel.app/work",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Work | Anuj Mishra",
+    title: "Work | Abhay Mishra",
     description: "Long-form edits, short-form reels, thumbnails, and channel case studies.",
   },
 };

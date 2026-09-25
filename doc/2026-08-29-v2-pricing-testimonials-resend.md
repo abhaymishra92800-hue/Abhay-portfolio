@@ -20,11 +20,11 @@
 
 ### D. Testimonials on home (move from /testimonials page)
 - Add a "What clients say" section on home, 3 cards
-- Real names + real images from anuj4u.in:
+- Real names + real images from abhay-portfolio.vercel.app:
   - Harjeet Dhillon (Canadian actress and author)
   - Dr. Maurice Maurer (Scientist and YouTube educator)
   - Blake Reddy (Wealth adviser and podcast host)
-- Real quote text from anuj4u.in
+- Real quote text from abhay-portfolio.vercel.app
 - Remove "Testimonials" link from navbar (page can stay as a legacy deep-link)
 
 ### E. About page — expand
@@ -37,7 +37,7 @@ Add a "My story" section in 3 paragraphs:
 ### F. Resend integration
 New API route: `app/api/email/subscribe/route.ts`
 - POST { email, source, name? }
-- Adds to Resend Audiences via Resend API (one main audience "Anuj 4U Subscribers")
+- Adds to Resend Audiences via Resend API (one main audience "Abhay 4U Subscribers")
 - Sends a welcome email via Resend
 - Saves to Firestore `email_subscribers` collection as a backup
 - Validates email server-side
@@ -52,7 +52,7 @@ New component: `components/EmailCapture.tsx`
 Env vars needed in `.env.local`:
 - `RESEND_API_KEY` — user gets this from Resend dashboard
 - `RESEND_AUDIENCE_ID` — created in Resend Audiences
-- `RESEND_FROM_EMAIL` — verified sender (default `noreply@anuj4u.in`)
+- `RESEND_FROM_EMAIL` — verified sender (default `abhaymishra92800@gmail.com`)
 
 **Ask the user:** "I need from you: (1) Resend API key, (2) Audience ID, (3) a verified sender email. Once I have these, I plug them into `.env.local` and the integration works. If you only have the API key right now, I'll build the route to read the audience ID from the first audience in your account."
 
