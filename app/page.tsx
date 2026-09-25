@@ -3,14 +3,13 @@ import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import VideoGrid from "@/components/VideoGrid";
 import { longFormVideos, shortFormVideos } from "@/lib/videos";
-import { site, tools, services, beliefs } from "@/lib/site";
+import { site, services, beliefs } from "@/lib/site";
 
-const clients = Array.from(new Set([...longFormVideos, ...shortFormVideos].map((v) => v.client)));
 
 const stats = [
-  { value: `${longFormVideos.length}+`, label: "Long-form edits" },
-  { value: `${shortFormVideos.length}+`, label: "Shorts & reels" },
-  { value: `${clients.length}`, label: "Channels edited for" },
+  { value: "400+", label: "Videos edited" },
+  { value: "1M+", label: "Audience reach" },
+  { value: "30%", label: "Audience retention" },
 ];
 
 export default function Home() {
@@ -22,11 +21,7 @@ export default function Home() {
       {/* ─── HERO ─── */}
       <section className="relative bg-gradient-to-br from-orange-50 via-purple-100 to-purple-300 pt-32 pb-16 border-b border-outline-variant/30">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16 flex flex-col-reverse lg:flex-row items-center gap-12">
-          <div className="w-full lg:w-3/5">
-            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary bg-white/70 border border-primary/20 px-3 py-1.5 rounded-full mb-6">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              Available for freelance work
-            </span>
+          <div className="w-full lg:w-1/2">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-on-surface leading-[1.1] tracking-tight mb-5">
               Hi, I&apos;m Abhay.
               <br />
@@ -37,7 +32,7 @@ export default function Home() {
               shorts, LinkedIn, and the content systems that keep them shipping.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 mb-8">
+            <div className="flex flex-wrap items-center gap-4 mb-10">
               <a
                 href="#work"
                 className="bg-primary hover:bg-primary-container text-white font-semibold py-3.5 px-8 rounded-full transition-all duration-300 shadow-lg shadow-indigo-500/25 hover:scale-105 active:scale-95 flex items-center gap-2"
@@ -54,17 +49,6 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="flex flex-wrap gap-2 mb-10">
-              {tools.map((t) => (
-                <span
-                  key={t}
-                  className="text-xs font-semibold text-on-surface bg-white/70 border border-outline-variant/50 px-3 py-1.5 rounded-full"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-
             <div className="grid grid-cols-3 gap-4 max-w-md">
               {stats.map((s) => (
                 <div key={s.label}>
@@ -75,15 +59,15 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-full lg:w-2/5 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-xs sm:max-w-sm">
+          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg">
               <div className="relative rounded-3xl overflow-hidden glass-card p-3 shadow-2xl border border-white/60 bg-white/40">
                 <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-tr from-indigo-100 via-purple-50 to-pink-50">
                   <Image
                     src={site.photo}
                     alt={site.name}
                     fill
-                    sizes="(max-width: 1024px) 80vw, 30vw"
+                    sizes="(max-width: 1024px) 90vw, 45vw"
                     className="object-cover object-top"
                     priority
                   />
@@ -120,22 +104,6 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-on-surface">Shorts & reels</h2>
           </div>
           <VideoGrid videos={shortFormVideos} vertical />
-        </div>
-      </section>
-
-      {/* ─── CLIENTS ─── */}
-      <section className="py-10 bg-surface border-y border-outline-variant/30">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
-          <p className="text-xs font-bold text-on-surface-variant uppercase tracking-widest text-center mb-5">
-            Videos edited for
-          </p>
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
-            {clients.map((c) => (
-              <span key={c} className="text-sm md:text-base font-bold text-on-surface/70">
-                {c}
-              </span>
-            ))}
-          </div>
         </div>
       </section>
 

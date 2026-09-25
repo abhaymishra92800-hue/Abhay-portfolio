@@ -26,9 +26,6 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-indigo-600 to-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-md">
-                A
-              </div>
               <span className="font-bold text-xl text-on-surface">
                 Abhay Mishra
               </span>
