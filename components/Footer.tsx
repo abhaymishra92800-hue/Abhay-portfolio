@@ -5,17 +5,14 @@ export default function Footer() {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
-    { name: "Work", href: "/work" },
-    { name: "Free Tools", href: "/free-tools" },
+    { name: "Portfolio", href: "/portfolio" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
 
   const socials = [
-    { name: "LinkedIn", href: "https://www.linkedin.com/in/byanuj4u/", icon: "person" },
-    { name: "WhatsApp", href: "https://wa.me/9123997677", icon: "chat" },
-    { name: "Telegram", href: "https://t.me/anujmishra4u", icon: "send" },
-    { name: "Skype", href: "https://join.skype.com/invite/yCZ9IhClcTvD", icon: "forum" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/abhaymishrahere/", icon: "person" },
+    { name: "WhatsApp", href: "https://wa.me/917980119941", icon: "chat" },
   ];
 
   return (
@@ -37,14 +34,14 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-on-surface-variant text-sm leading-relaxed mb-6 max-w-xs">
-              Helping creators and brands grow through video editing, social
-              media strategy, and performance marketing.
+              Video editor and social media manager. YouTube, LinkedIn, and
+              content automation for creators and founders.
             </p>
             <a
-              href="mailto:abhaymishra92800@gmail.com"
+              href="mailto:abhayworkofficial@gmail.com"
               className="text-sm font-semibold text-primary hover:underline decoration-primary/40"
             >
-              abhaymishra92800@gmail.com
+              abhayworkofficial@gmail.com
             </a>
           </div>
 

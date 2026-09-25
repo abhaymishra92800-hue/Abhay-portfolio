@@ -54,7 +54,7 @@ export function OgImage({
           </div>
         ) : null}
         <div style={{ display: "flex", marginTop: 48, fontSize: 26, opacity: 0.85 }}>
-          Video Editor · Growth Marketer
+          Video Editor · Social Media Manager
         </div>
       </div>
     ),

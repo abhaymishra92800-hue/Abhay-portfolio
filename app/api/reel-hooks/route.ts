@@ -155,7 +155,7 @@ function buildEmailHtml(email: string, niche: string, hooks: HookTemplate[]): st
     </div>
 
     <div style="text-align:center;padding:24px 0 40px;color:#9ca3af;font-size:12px;">
-      <p style="margin:0 0 4px;">Abhay Mishra · abhaymishra92800@gmail.com · <a href="https://abhay-portfolio.vercel.app" style="color:#6355FF;">abhay-portfolio.vercel.app</a></p>
+      <p style="margin:0 0 4px;">Abhay Mishra · abhayworkofficial@gmail.com · <a href="https://abhay-portfolio.vercel.app" style="color:#6355FF;">abhay-portfolio.vercel.app</a></p>
       <p style="margin:0;">You received this because you requested a hook swipe file from abhay-portfolio.vercel.app</p>
     </div>
   </div>
@@ -219,7 +219,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(
         {
           error:
-            "Email service not set up yet. Please contact Abhay directly at abhaymishra92800@gmail.com",
+            "Email service not set up yet. Please contact Abhay directly at abhayworkofficial@gmail.com",
         },
         { status: 503 }
       );

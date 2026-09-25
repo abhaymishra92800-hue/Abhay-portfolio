@@ -28,8 +28,8 @@ Next.js 14 portfolio for Abhay Mishra with a lead-magnet funnel (LinkedIn conten
    | --- | --- | --- |
    | `GEMINI_API_KEY` | LinkedIn content generation | Falls back to mock content when missing |
    | `RESEND_API_KEY` | Email delivery | **Hard fails** if missing — must be set |
-   | `RESEND_FROM_EMAIL` | Sender address | Must be `abhaymishra92800@gmail.com` once domain is verified |
-   | `ADMIN_EMAIL` | BCC on every form submission | `abhaymishra92800@gmail.com` |
+   | `RESEND_FROM_EMAIL` | Sender address | Must be `abhayworkofficial@gmail.com` once domain is verified |
+   | `ADMIN_EMAIL` | BCC on every form submission | `abhayworkofficial@gmail.com` |
    | `GOOGLE_SHEETS_WEBHOOK_URL` | Optional lead log | Google Apps Script webhook |
    | `NEXT_PUBLIC_FIREBASE_*` | Firebase client config | 6 vars, see template |
 
@@ -125,5 +125,5 @@ Hosted on Vercel. Set the env vars in the Vercel dashboard and connect the GitHu
 
 ## Contact
 
-- Email: abhaymishra92800@gmail.com
-- LinkedIn: https://www.linkedin.com/in/byanuj4u/
+- Email: abhayworkofficial@gmail.com
+- LinkedIn: https://www.linkedin.com/in/abhaymishrahere/

@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
   const { email, name, source } = parsed.data;
   const audienceId = process.env.RESEND_AUDIENCE_ID;
   const fromEmail =
-    process.env.RESEND_FROM_EMAIL ?? "Abhay Mishra <abhaymishra92800@gmail.com>";
+    process.env.RESEND_FROM_EMAIL ?? "Abhay Mishra <abhayworkofficial@gmail.com>";
 
   const result: {
     resend: "added" | "skipped" | "missing-audience" | "error";

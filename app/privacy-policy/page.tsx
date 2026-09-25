@@ -48,10 +48,10 @@ export default function PrivacyPolicyPage() {
             and growth marketing specialist. For any privacy question, contact us
             at{" "}
             <a
-              href="mailto:abhaymishra92800@gmail.com"
+              href="mailto:abhayworkofficial@gmail.com"
               className="text-primary font-semibold hover:underline"
             >
-              abhaymishra92800@gmail.com
+              abhayworkofficial@gmail.com
             </a>
             .
           </p>
@@ -129,10 +129,10 @@ export default function PrivacyPolicyPage() {
             You may request access to, correction of, or deletion of your
             personal data at any time by emailing{" "}
             <a
-              href="mailto:abhaymishra92800@gmail.com"
+              href="mailto:abhayworkofficial@gmail.com"
               className="text-primary font-semibold hover:underline"
             >
-              abhaymishra92800@gmail.com
+              abhayworkofficial@gmail.com
             </a>
             .
           </p>

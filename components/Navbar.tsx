@@ -18,16 +18,12 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "Work", href: "/work" },
     { name: "Portfolio", href: "/portfolio" },
-    { name: "Free Tools", href: "/free-tools" },
+    { name: "Services", href: "/services" },
     { name: "About", href: "/about" },
   ];
 
-  const specialLinks = [
-    { name: "LinkedIn Funnel", href: "/linkedin-funnel", badge: "FREE" },
-  ];
+  const specialLinks: { name: string; href: string; badge?: string }[] = [];
 
   return (
     <header

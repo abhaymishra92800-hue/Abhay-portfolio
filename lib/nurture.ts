@@ -48,7 +48,7 @@ function shell(title: string, inner: string): string {
       <a href="https://abhay-portfolio.vercel.app/contact" style="display:inline-block;background:#0A66C2;color:white;font-weight:700;padding:13px 28px;border-radius:12px;text-decoration:none;font-size:15px;">Book a Strategy Call →</a>
     </div>
     <div style="text-align:center;padding:16px 0 36px;color:#9ca3af;font-size:12px;">
-      <p style="margin:0 0 4px;">Abhay Mishra · abhaymishra92800@gmail.com · <a href="https://abhay-portfolio.vercel.app" style="color:#6355FF;">abhay-portfolio.vercel.app</a></p>
+      <p style="margin:0 0 4px;">Abhay Mishra · abhayworkofficial@gmail.com · <a href="https://abhay-portfolio.vercel.app" style="color:#6355FF;">abhay-portfolio.vercel.app</a></p>
       <p style="margin:0;">You received this because you requested a LinkedIn content plan from abhay-portfolio.vercel.app</p>
     </div>
   </div>

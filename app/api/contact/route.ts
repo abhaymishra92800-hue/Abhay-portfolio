@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
 
     // ── Send email notification to admin (Resend) ──
     const emailHtml = buildContactEmailHtml(body);
-    const adminEmail = process.env.ADMIN_EMAIL || "abhaymishra92800@gmail.com";
+    const adminEmail = process.env.ADMIN_EMAIL || "abhayworkofficial@gmail.com";
 
     try {
       await sendFunnelEmail({
@@ -65,7 +65,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json(
           {
             error:
-              "Email service not set up yet. Please contact Abhay directly at abhaymishra92800@gmail.com",
+              "Email service not set up yet. Please contact Abhay directly at abhayworkofficial@gmail.com",
           },
           { status: 503 }
         );
@@ -139,7 +139,7 @@ function buildContactEmailHtml(body: ContactRequestBody): string {
 
   <!-- Footer -->
   <div style="text-align:center;padding:24px 0 40px;color:#9ca3af;font-size:12px;">
-    <p style="margin:0;">Abhay Mishra · abhaymishra92800@gmail.com · <a href="https://abhay-portfolio.vercel.app" style="color:#6355FF;">abhay-portfolio.vercel.app</a></p>
+    <p style="margin:0;">Abhay Mishra · abhayworkofficial@gmail.com · <a href="https://abhay-portfolio.vercel.app" style="color:#6355FF;">abhay-portfolio.vercel.app</a></p>
   </div>
 </body>
 </html>`;

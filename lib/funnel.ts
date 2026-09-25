@@ -109,7 +109,7 @@ export async function sendFunnelEmail(
   const payload: Record<string, unknown> = {
     from: `${params.fromName ?? "Abhay Mishra"} <${fromAddress}>`,
     to: [params.to],
-    reply_to: params.replyTo ?? "abhaymishra92800@gmail.com",
+    reply_to: params.replyTo ?? "abhayworkofficial@gmail.com",
     subject: params.subject,
     html: params.html,
   };
