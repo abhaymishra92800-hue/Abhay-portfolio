@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import ScrollReveal from "@/components/ScrollReveal";
-import { site, tools, services } from "@/lib/site";
+import { site, tools, services, beliefs } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Abhay Mishra | Video Editor & Social Media Manager",
@@ -11,23 +11,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
 };
 
-const beliefs = [
-  {
-    icon: "event_repeat",
-    title: "Systems beat habits",
-    desc: "A habit needs a good week. A system needs you once a month. I bank content ahead so it ships even when things get busy.",
-  },
-  {
-    icon: "description",
-    title: "A brief beats a better editor",
-    desc: "Most editing problems are really briefing problems. Hook length, caption style, where b-roll goes: written down before the first cut.",
-  },
-  {
-    icon: "auto_awesome",
-    title: "AI where it holds up",
-    desc: "AI saves real time on drafting, research, and atmosphere shots. Anything the viewer can check against real life gets shot for real.",
-  },
-];
 
 const linkedinStats = [
   { value: "0 → 424", label: "followers in 4 weeks" },

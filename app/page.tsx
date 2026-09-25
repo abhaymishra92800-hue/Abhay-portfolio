@@ -3,7 +3,7 @@ import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import VideoGrid from "@/components/VideoGrid";
 import { longFormVideos, shortFormVideos } from "@/lib/videos";
-import { site, tools, services } from "@/lib/site";
+import { site, tools, services, beliefs } from "@/lib/site";
 
 const clients = Array.from(new Set([...longFormVideos, ...shortFormVideos].map((v) => v.client)));
 
@@ -87,10 +87,6 @@ export default function Home() {
                     className="object-cover object-top"
                     priority
                   />
-                  <div className="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-md px-4 py-3 rounded-xl shadow-lg">
-                    <p className="font-bold text-on-surface text-sm leading-tight">{site.name}</p>
-                    <p className="text-xs text-on-surface-variant leading-tight">{site.role}</p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -171,6 +167,29 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ─── HOW I WORK ─── */}
+      <section className="py-20">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
+          <ScrollReveal>
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">How I work</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-on-surface">Brief first, systems always</h2>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal stagger>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {beliefs.map((b) => (
+                <div key={b.title} className="reveal glass-card rounded-3xl p-7">
+                  <span className="material-symbols-outlined text-primary text-3xl mb-3 block">{b.icon}</span>
+                  <h3 className="text-lg font-bold text-on-surface mb-2">{b.title}</h3>
+                  <p className="text-sm text-on-surface-variant leading-relaxed">{b.desc}</p>
                 </div>
               ))}
             </div>
