@@ -12,7 +12,12 @@ const hiddenPaths = [
 
 const nextConfig = {
   async redirects() {
-    return hiddenPaths.map((source) => ({ source, destination: "/", permanent: false }));
+    return [
+      ...hiddenPaths.map((source) => ({ source, destination: "/", permanent: false })),
+      // Old work pages were folded into /portfolio.
+      { source: "/work/:path*", destination: "/portfolio", permanent: true },
+      { source: "/reels", destination: "/portfolio", permanent: true },
+    ];
   },
   images: {
     remotePatterns: [
