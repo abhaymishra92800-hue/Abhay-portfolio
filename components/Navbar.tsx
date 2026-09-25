@@ -33,7 +33,7 @@ export default function Navbar() {
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="flex justify-between items-center px-6 lg:px-16 py-4 w-full max-w-[1400px] mx-auto">
+      <div className="flex md:grid md:grid-cols-[1fr_auto_1fr] justify-between items-center px-6 lg:px-16 py-4 w-full max-w-[1400px] mx-auto">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
           <span className="font-bold text-xl text-on-surface group-hover:text-primary transition-colors duration-300">
@@ -42,7 +42,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-6 items-center">
+        <nav className="hidden md:flex gap-10 items-center justify-center">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -80,13 +80,16 @@ export default function Navbar() {
               </Link>
             );
           })}
+        </nav>
+
+        <div className="hidden md:flex justify-end">
           <Link
             href="/contact"
             className="bg-primary text-white font-semibold px-6 py-2.5 rounded-full hover:bg-primary-container transition-all duration-200 shadow-md hover:shadow-indigo-500/25 hover:scale-105 active:scale-95"
           >
             Contact me
           </Link>
-        </nav>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
