@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://abhay-portfolio.vercel.app";
+const BASE_URL = "https://abhay-editing-portfolio-website.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [

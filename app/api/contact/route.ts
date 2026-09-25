@@ -99,7 +99,7 @@ function buildContactEmailHtml(body: ContactRequestBody): string {
   <!-- Header -->
   <div style="background:linear-gradient(135deg,#0A66C2 0%,#6355FF 100%);padding:32px 24px;text-align:center;">
     <h1 style="color:white;font-size:24px;font-weight:800;margin:0;">📬 New Contact Submission</h1>
-    <p style="color:rgba(255,255,255,0.85);font-size:13px;margin:8px 0 0;">via abhay-portfolio.vercel.app</p>
+    <p style="color:rgba(255,255,255,0.85);font-size:13px;margin:8px 0 0;">via abhay-editing-portfolio-website.vercel.app</p>
   </div>
 
   <!-- Body -->
@@ -139,7 +139,7 @@ function buildContactEmailHtml(body: ContactRequestBody): string {
 
   <!-- Footer -->
   <div style="text-align:center;padding:24px 0 40px;color:#9ca3af;font-size:12px;">
-    <p style="margin:0;">Abhay Mishra · abhayworkofficial@gmail.com · <a href="https://abhay-portfolio.vercel.app" style="color:#6355FF;">abhay-portfolio.vercel.app</a></p>
+    <p style="margin:0;">Abhay Mishra · abhayworkofficial@gmail.com · <a href="https://abhay-editing-portfolio-website.vercel.app" style="color:#6355FF;">abhay-editing-portfolio-website.vercel.app</a></p>
   </div>
 </body>
 </html>`;

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy | Abhay Mishra",
   description:
-    "How Abhay Mishra (abhay-portfolio.vercel.app) collects, uses, and protects your data — including contact forms, the LinkedIn content funnel, email communications, and privacy-friendly analytics.",
+    "How Abhay Mishra (abhay-editing-portfolio-website.vercel.app) collects, uses, and protects your data — including contact forms, the LinkedIn content funnel, email communications, and privacy-friendly analytics.",
 };
 
 function Section({
@@ -44,7 +44,7 @@ export default function PrivacyPolicyPage() {
 
         <Section title="1. Who We Are">
           <p>
-            This website (abhay-portfolio.vercel.app) is operated by Abhay Mishra, a video editor
+            This website (abhay-editing-portfolio-website.vercel.app) is operated by Abhay Mishra, a video editor
             and growth marketing specialist. For any privacy question, contact us
             at{" "}
             <a

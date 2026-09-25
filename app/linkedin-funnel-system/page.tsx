@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "LinkedIn Funnel System | Abhay Mishra",
     description: "Turn LinkedIn views into booked calls. A complete system, $800/mo.",
-    url: "https://abhay-portfolio.vercel.app/linkedin-funnel-system",
+    url: "https://abhay-editing-portfolio-website.vercel.app/linkedin-funnel-system",
     type: "website",
   },
   twitter: {

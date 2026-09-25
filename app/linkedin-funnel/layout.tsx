@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description:
       "AI-generated LinkedIn content strategy: 30 posts, image prompts, video concepts & why each post will perform — sent directly to your inbox.",
     type: "website",
-    url: "https://abhay-portfolio.vercel.app/linkedin-funnel",
+    url: "https://abhay-editing-portfolio-website.vercel.app/linkedin-funnel",
   },
   twitter: {
     card: "summary_large_image",
