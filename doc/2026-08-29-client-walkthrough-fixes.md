@@ -42,7 +42,7 @@ User chose: **drill-in cards, each card opens a category page with the full libr
 - Replace "Portfolio" with "Work" pointing to `/work`
 - Remove `/portfolio` from nav (page can redirect or stay as a legacy page)
 
-## 3. Real content to use (scraped from anuj4u.in)
+## 3. Real content to use (scraped from abhay-portfolio.vercel.app)
 
 ### Thumbnail images
 - victor-chan.jpg — for Victor Chan work

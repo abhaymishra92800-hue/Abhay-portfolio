@@ -1,55 +1,26 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
+import VideoGrid from "@/components/VideoGrid";
+import { longFormVideos, shortFormVideos } from "@/lib/videos";
+
 
 export const metadata: Metadata = {
-  title: "Portfolio | Anuj Mishra",
+  title: "Portfolio | Abhay Mishra",
   description: "A curated collection of video editing work — long-form, short-form, thumbnails, and motion graphics.",
   alternates: { canonical: "/portfolio" },
   openGraph: {
-    title: "Portfolio | Anuj Mishra",
+    title: "Portfolio | Abhay Mishra",
     description: "Curated video editing portfolio.",
-    url: "https://anuj4u.in/portfolio",
+    url: "https://abhay-portfolio.vercel.app/portfolio",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio | Anuj Mishra",
+    title: "Portfolio | Abhay Mishra",
     description: "Curated video editing portfolio.",
   },
 };
-
-const featuredProjects = [
-  {
-    id: "y11b_rVHcyg",
-    title: "Launch Excel — VSL re-cut",
-    client: "Victor Chan",
-    category: "Long-form",
-    metric: "+38% course signups",
-  },
-  {
-    id: "izidLZclYZs",
-    title: "Training Scientists — episode edit",
-    client: "Dr. Maurice Maurer",
-    category: "Long-form",
-    metric: "Motion graphics overlay",
-  },
-  {
-    id: "h2O8Gnq7w24",
-    title: "Hook-first vertical",
-    client: "Author channel",
-    category: "Short-form",
-    metric: "30s reel",
-  },
-  {
-    id: "Cd4YRPSLBVE",
-    title: "Carousel-to-video clip",
-    client: "Course creator",
-    category: "Short-form",
-    metric: "45s loop",
-  },
-];
 
 export default function PortfolioPage() {
   return (
@@ -69,42 +40,9 @@ export default function PortfolioPage() {
         </p>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-        {featuredProjects.map((p) => (
-          <a
-            key={p.id}
-            href={`https://www.youtube.com/watch?v=${p.id}`}
-            target="_blank"
-            rel="noreferrer"
-            className="group block glass-card rounded-2xl overflow-hidden border border-outline-variant/40 hover:-translate-y-1 hover:shadow-xl transition-all"
-          >
-            <div className="relative aspect-video bg-black">
-              <Image
-                src={`https://img.youtube.com/vi/${p.id}/hqdefault.jpg`}
-                alt={p.title}
-                fill
-                sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-transparent" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="material-symbols-outlined text-white text-4xl drop-shadow-lg group-hover:scale-110 transition-transform" aria-hidden="true">
-                  play_circle
-                </span>
-              </div>
-            </div>
-            <div className="p-4">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">
-                {p.client}
-              </p>
-              <h3 className="text-sm font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">
-                {p.title}
-              </h3>
-              <p className="text-[10px] text-on-surface-variant">{p.category}</p>
-              <p className="text-xs font-semibold text-primary mt-1">{p.metric}</p>
-            </div>
-          </a>
-        ))}
+      <section className="relative z-10 space-y-16">
+        <VideoGrid videos={longFormVideos} />
+        <VideoGrid videos={shortFormVideos} vertical />
       </section>
 
       <section className="mt-16 relative z-10">

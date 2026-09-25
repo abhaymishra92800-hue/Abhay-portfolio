@@ -5,17 +5,14 @@ export default function Footer() {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
-    { name: "Work", href: "/work" },
-    { name: "Free Tools", href: "/free-tools" },
+    { name: "Portfolio", href: "/portfolio" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
 
   const socials = [
-    { name: "LinkedIn", href: "https://www.linkedin.com/in/byanuj4u/", icon: "person" },
-    { name: "WhatsApp", href: "https://wa.me/9123997677", icon: "chat" },
-    { name: "Telegram", href: "https://t.me/anujmishra4u", icon: "send" },
-    { name: "Skype", href: "https://join.skype.com/invite/yCZ9IhClcTvD", icon: "forum" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/abhaymishrahere/", icon: "person" },
+    { name: "WhatsApp", href: "https://wa.me/917980119941", icon: "chat" },
   ];
 
   return (
@@ -33,18 +30,18 @@ export default function Footer() {
                 A
               </div>
               <span className="font-bold text-xl text-on-surface">
-                Anuj Mishra
+                Abhay Mishra
               </span>
             </div>
             <p className="text-on-surface-variant text-sm leading-relaxed mb-6 max-w-xs">
-              Helping creators and brands grow through video editing, social
-              media strategy, and performance marketing.
+              Video editor and social media manager. YouTube, LinkedIn, and
+              content automation for creators and founders.
             </p>
             <a
-              href="mailto:contact@anuj4u.in"
+              href="mailto:abhayworkofficial@gmail.com"
               className="text-sm font-semibold text-primary hover:underline decoration-primary/40"
             >
-              contact@anuj4u.in
+              abhayworkofficial@gmail.com
             </a>
           </div>
 
@@ -102,7 +99,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-purple-300/40 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-on-surface-variant">
-            © {new Date().getFullYear()} Anuj Mishra. All rights reserved.
+            © {new Date().getFullYear()} Abhay Mishra. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link

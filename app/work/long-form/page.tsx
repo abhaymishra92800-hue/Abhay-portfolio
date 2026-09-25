@@ -1,96 +1,26 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import VideoGrid from "@/components/VideoGrid";
+import { longFormVideos } from "@/lib/videos";
+
 
 export const metadata: Metadata = {
-  title: "Long-form Video Edits | Anuj Mishra",
-  description: "Long-form YouTube edits, podcast episode cuts, and VSLs edited by Anuj Mishra. 8 to 25 minute videos with retention-first pacing.",
+  title: "Long-form Video Edits | Abhay Mishra",
+  description: "Long-form YouTube edits, podcast episode cuts, and VSLs edited by Abhay Mishra. 8 to 25 minute videos with retention-first pacing.",
   alternates: { canonical: "/work/long-form" },
   openGraph: {
-    title: "Long-form Video Edits | Anuj Mishra",
+    title: "Long-form Video Edits | Abhay Mishra",
     description: "Long-form YouTube, podcast, and VSL edits.",
-    url: "https://anuj4u.in/work/long-form",
+    url: "https://abhay-portfolio.vercel.app/work/long-form",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Long-form Video Edits | Anuj Mishra",
+    title: "Long-form Video Edits | Abhay Mishra",
     description: "Long-form YouTube, podcast, and VSL edits.",
   },
 };
-
-const longFormEdits = [
-  {
-    id: "y11b_rVHcyg",
-    title: "Launch Excel — VSL re-cut",
-    desc: "Sales-page video rebuilt with a stronger hook, tighter pacing, and on-screen proof points. Drove +38% course signup rate.",
-    client: "Victor Chan · Launch Excel",
-  },
-  {
-    id: "izidLZclYZs",
-    title: "Training Scientists — episode edit",
-    desc: "Lecture-style content layered with motion graphics, on-screen notes, and chapter markers for retention.",
-    client: "Dr. Maurice Maurer · Training Scientists",
-  },
-  {
-    id: "Cd4YRPSLBVE",
-    title: "Author podcast — episode cut",
-    desc: "Multi-cam interview with captions, branded lower-thirds, and B-roll that matches the story beats.",
-    client: "Harjeet Dhillon",
-  },
-  {
-    id: "-SYqXdaZXl8",
-    title: "Wealth adviser — podcast edit",
-    desc: "Long-form interview with timestamped chapters, a clean intro/outro, and a teaser for the next episode.",
-    client: "Blake Reddy",
-  },
-];
-
-function VideoTile({
-  id,
-  title,
-  desc,
-  client,
-}: {
-  id: string;
-  title: string;
-  desc: string;
-  client: string;
-}) {
-  return (
-    <a
-      href={`https://www.youtube.com/watch?v=${id}`}
-      target="_blank"
-      rel="noreferrer"
-      className="group block glass-card rounded-2xl overflow-hidden border border-outline-variant/40 hover:-translate-y-1 hover:shadow-xl transition-all"
-    >
-      <div className="relative aspect-video bg-black">
-        <Image
-          src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
-          alt={title}
-          fill
-          className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-transparent" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="material-symbols-outlined text-white text-5xl drop-shadow-lg group-hover:scale-110 transition-transform">
-            play_circle
-          </span>
-        </div>
-      </div>
-      <div className="p-5">
-        <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">
-          {client}
-        </p>
-        <h3 className="text-base font-bold text-on-surface mb-1">{title}</h3>
-        <p className="text-sm text-on-surface-variant leading-relaxed">
-          {desc}
-        </p>
-      </div>
-    </a>
-  );
-}
 
 export default function LongFormPage() {
   return (
@@ -118,11 +48,7 @@ export default function LongFormPage() {
         </p>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
-        {longFormEdits.map((v) => (
-          <VideoTile key={v.id} {...v} />
-        ))}
-      </section>
+      <section className="relative z-10"><VideoGrid videos={longFormVideos} /></section>
 
       <section className="mt-16 relative z-10">
         <div className="glass-card rounded-3xl p-8 text-center max-w-3xl mx-auto bg-gradient-to-br from-indigo-50 to-indigo-100 shadow-2xl">

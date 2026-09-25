@@ -251,7 +251,7 @@ function buildEmailHtml(
   <!-- Header -->
   <div style="background:linear-gradient(135deg,#0A66C2 0%,#6355FF 100%);padding:40px 24px;text-align:center;">
     <div style="display:inline-block;background:rgba(255,255,255,0.15);border-radius:12px;padding:8px 20px;margin-bottom:20px;">
-      <span style="color:rgba(255,255,255,0.9);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;">LinkedIn Content Engine by Anuj Mishra</span>
+      <span style="color:rgba(255,255,255,0.9);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;">LinkedIn Content Engine by Abhay Mishra</span>
     </div>
     <h1 style="color:white;font-size:28px;font-weight:800;margin:0 0 12px;line-height:1.2;">🚀 Your 30-Day LinkedIn Content Calendar</h1>
     <p style="color:rgba(255,255,255,0.85);font-size:14px;margin:0 0 24px;">Profile: ${linkedinUrl}</p>
@@ -279,13 +279,13 @@ function buildEmailHtml(
     <div style="background:linear-gradient(135deg,#1c1b1c,#2d1e6e);border-radius:16px;padding:32px;text-align:center;margin:24px 0;">
       <h3 style="color:white;font-size:20px;font-weight:800;margin:0 0 12px;">Want Help Executing This?</h3>
       <p style="color:rgba(255,255,255,0.75);font-size:14px;margin:0 0 24px;line-height:1.6;">I personally help creators and founders build their LinkedIn presence — from strategy to content to growth.</p>
-      <a href="https://anuj4u.in/contact" style="display:inline-block;background:#0A66C2;color:white;font-weight:700;padding:14px 32px;border-radius:12px;text-decoration:none;font-size:15px;">Book a Free Strategy Call →</a>
+      <a href="https://abhay-portfolio.vercel.app/contact" style="display:inline-block;background:#0A66C2;color:white;font-weight:700;padding:14px 32px;border-radius:12px;text-decoration:none;font-size:15px;">Book a Free Strategy Call →</a>
     </div>
 
     <!-- Footer -->
     <div style="text-align:center;padding:24px 0 40px;color:#9ca3af;font-size:12px;">
-      <p style="margin:0 0 4px;">Anuj Mishra · contact@anuj4u.in · <a href="https://anuj4u.in" style="color:#6355FF;">anuj4u.in</a></p>
-      <p style="margin:0;">You received this because you requested a LinkedIn content plan from anuj4u.in</p>
+      <p style="margin:0 0 4px;">Abhay Mishra · abhayworkofficial@gmail.com · <a href="https://abhay-portfolio.vercel.app" style="color:#6355FF;">abhay-portfolio.vercel.app</a></p>
+      <p style="margin:0;">You received this because you requested a LinkedIn content plan from abhay-portfolio.vercel.app</p>
     </div>
   </div>
 </body>
@@ -377,7 +377,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(
         {
           error:
-            "Email service not set up yet. Please contact Anuj directly at contact@anuj4u.in",
+            "Email service not set up yet. Please contact Abhay directly at abhayworkofficial@gmail.com",
         },
         { status: 503 }
       );

@@ -1,131 +1,26 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import VideoGrid from "@/components/VideoGrid";
+import { longFormVideos, shortFormVideos } from "@/lib/videos";
+
 
 export const metadata: Metadata = {
-  title: "Video Portfolio | Anuj Mishra",
-  description: "Full video portfolio showcasing long-form edits, short-form reels, and motion graphics by Anuj Mishra.",
+  title: "Video Portfolio | Abhay Mishra",
+  description: "Full video portfolio showcasing long-form edits, short-form reels, and motion graphics by Abhay Mishra.",
   alternates: { canonical: "/work/video" },
   openGraph: {
-    title: "Video Portfolio | Anuj Mishra",
+    title: "Video Portfolio | Abhay Mishra",
     description: "Full video portfolio showcasing editing craft.",
-    url: "https://anuj4u.in/work/video",
+    url: "https://abhay-portfolio.vercel.app/work/video",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Video Portfolio | Anuj Mishra",
+    title: "Video Portfolio | Abhay Mishra",
     description: "Full video portfolio showcasing editing craft.",
   },
 };
-
-const videoProjects = [
-  {
-    id: "y11b_rVHcyg",
-    title: "Launch Excel — VSL re-cut",
-    desc: "Sales-page video rebuilt with a stronger hook, tighter pacing, and on-screen proof points. Drove +38% course signup rate.",
-    client: "Victor Chan · Launch Excel",
-    duration: "12 min",
-    category: "Long-form",
-  },
-  {
-    id: "izidLZclYZs",
-    title: "Training Scientists — episode edit",
-    desc: "Lecture-style content layered with motion graphics, on-screen notes, and chapter markers for retention.",
-    client: "Dr. Maurice Maurer · Training Scientists",
-    duration: "18 min",
-    category: "Long-form",
-  },
-  {
-    id: "Cd4YRPSLBVE",
-    title: "Author podcast — episode cut",
-    desc: "Multi-cam interview with captions, branded lower-thirds, and B-roll that matches the story beats.",
-    client: "Harjeet Dhillon",
-    duration: "22 min",
-    category: "Long-form",
-  },
-  {
-    id: "-SYqXdaZXl8",
-    title: "Wealth adviser — podcast edit",
-    desc: "Long-form interview with timestamped chapters, a clean intro/outro, and a teaser for the next episode.",
-    client: "Blake Reddy",
-    duration: "15 min",
-    category: "Long-form",
-  },
-  {
-    id: "h2O8Gnq7w24",
-    title: "Hook-first vertical",
-    desc: "The first 3 seconds hook, the last 3 seconds call to action. Built for the scroll, captions baked in.",
-    client: "Author channel",
-    duration: "30s",
-    category: "Short-form",
-  },
-  {
-    id: "izidLZclYZs2",
-    title: "Punchy 30s reel",
-    desc: "Sharp cuts, kinetic text, no dead air. Tuned for LinkedIn and Instagram feed.",
-    client: "Education creator",
-    duration: "30s",
-    category: "Short-form",
-  },
-];
-
-function VideoCard({
-  id,
-  title,
-  desc,
-  client,
-  duration,
-  category,
-}: {
-  id: string;
-  title: string;
-  desc: string;
-  client: string;
-  duration: string;
-  category: string;
-}) {
-  return (
-    <a
-      href={`https://www.youtube.com/watch?v=${id}`}
-      target="_blank"
-      rel="noreferrer"
-      className="group block glass-card rounded-2xl overflow-hidden border border-outline-variant/40 hover:-translate-y-1 hover:shadow-xl transition-all"
-    >
-      <div className="relative aspect-video bg-black">
-        <Image
-          src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
-          alt={title}
-          fill
-          sizes="(max-width: 768px) 50vw, 33vw"
-          className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-transparent" />
-        <div className="absolute top-3 left-3 bg-black/70 text-white text-[10px] font-bold px-2 py-0.5 rounded">
-          {category}
-        </div>
-        <div className="absolute top-3 right-3 bg-black/70 text-white text-xs font-bold px-2 py-0.5 rounded">
-          {duration}
-        </div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="material-symbols-outlined text-white text-5xl drop-shadow-lg group-hover:scale-110 transition-transform" aria-hidden="true">
-            play_circle
-          </span>
-        </div>
-      </div>
-      <div className="p-5">
-        <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">
-          {client}
-        </p>
-        <h3 className="text-base font-bold text-on-surface mb-1">{title}</h3>
-        <p className="text-sm text-on-surface-variant leading-relaxed">
-          {desc}
-        </p>
-      </div>
-    </a>
-  );
-}
 
 export default function VideoPage() {
   return (
@@ -152,10 +47,9 @@ export default function VideoPage() {
         </p>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
-        {videoProjects.map((v) => (
-          <VideoCard key={v.id} {...v} />
-        ))}
+      <section className="relative z-10 space-y-16">
+        <VideoGrid videos={longFormVideos} />
+        <VideoGrid videos={shortFormVideos} vertical />
       </section>
 
       <section className="mt-16 relative z-10">

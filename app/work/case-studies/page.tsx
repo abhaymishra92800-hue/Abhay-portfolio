@@ -4,18 +4,18 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Case Studies | Anuj Mishra",
+  title: "Case Studies | Abhay Mishra",
   description: "Channel before and after case studies — what changed, what the work did, and the numbers behind it.",
   alternates: { canonical: "/work/case-studies" },
   openGraph: {
-    title: "Case Studies | Anuj Mishra",
+    title: "Case Studies | Abhay Mishra",
     description: "Channel before and after case studies.",
-    url: "https://anuj4u.in/work/case-studies",
+    url: "https://abhay-portfolio.vercel.app/work/case-studies",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Case Studies | Anuj Mishra",
+    title: "Case Studies | Abhay Mishra",
     description: "Channel before and after case studies.",
   },
 };
