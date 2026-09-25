@@ -36,10 +36,6 @@ export default function Navbar() {
       <div className="flex justify-between items-center px-6 lg:px-16 py-4 w-full max-w-[1400px] mx-auto">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-indigo-600 via-purple-600 to-indigo-500 flex items-center justify-center text-white font-bold text-lg relative overflow-hidden shadow-md group-hover:scale-105 transition-transform">
-            <div className="absolute inset-0 bg-white/20 rounded-full w-4 h-4 m-auto"></div>
-            <span>A</span>
-          </div>
           <span className="font-bold text-xl text-on-surface group-hover:text-primary transition-colors duration-300">
             Abhay Mishra
           </span>
