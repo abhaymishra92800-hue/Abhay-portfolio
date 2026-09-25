@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact Abhay Mishra | Get In Touch",
     description: "Contact Abhay Mishra for video editing, YouTube channel management, growth strategies, or general inquiries.",
-    url: "https://abhay-portfolio.vercel.app/contact",
+    url: "https://abhay-editing-portfolio-website.vercel.app/contact",
     type: "website",
   },
   twitter: {

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description:
       "Calculate ROAS, CPA, and revenue in seconds — then get 3 AI tips to improve your ad creative.",
     type: "website",
-    url: "https://abhay-portfolio.vercel.app/ad-roi-calculator",
+    url: "https://abhay-editing-portfolio-website.vercel.app/ad-roi-calculator",
   },
   twitter: {
     card: "summary_large_image",

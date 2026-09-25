@@ -151,12 +151,12 @@ function buildEmailHtml(email: string, niche: string, hooks: HookTemplate[]): st
     <div style="background:linear-gradient(135deg,#1c1b1c,#2d1e6e);border-radius:16px;padding:32px;text-align:center;margin:24px 0;">
       <h3 style="color:white;font-size:20px;font-weight:800;margin:0 0 12px;">Want Hooks That Actually Convert?</h3>
       <p style="color:rgba(255,255,255,0.75);font-size:14px;margin:0 0 24px;line-height:1.6;">I script and edit short-form content that gets watched, saved, and shared — for creators and brands.</p>
-      <a href="https://abhay-portfolio.vercel.app/contact" style="display:inline-block;background:#6355ff;color:white;font-weight:700;padding:14px 32px;border-radius:12px;text-decoration:none;font-size:15px;">Book a Free Strategy Call →</a>
+      <a href="https://abhay-editing-portfolio-website.vercel.app/contact" style="display:inline-block;background:#6355ff;color:white;font-weight:700;padding:14px 32px;border-radius:12px;text-decoration:none;font-size:15px;">Book a Free Strategy Call →</a>
     </div>
 
     <div style="text-align:center;padding:24px 0 40px;color:#9ca3af;font-size:12px;">
-      <p style="margin:0 0 4px;">Abhay Mishra · abhayworkofficial@gmail.com · <a href="https://abhay-portfolio.vercel.app" style="color:#6355FF;">abhay-portfolio.vercel.app</a></p>
-      <p style="margin:0;">You received this because you requested a hook swipe file from abhay-portfolio.vercel.app</p>
+      <p style="margin:0 0 4px;">Abhay Mishra · abhayworkofficial@gmail.com · <a href="https://abhay-editing-portfolio-website.vercel.app" style="color:#6355FF;">abhay-editing-portfolio-website.vercel.app</a></p>
+      <p style="margin:0;">You received this because you requested a hook swipe file from abhay-editing-portfolio-website.vercel.app</p>
     </div>
   </div>
 </body>

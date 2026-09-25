@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Portfolio | Abhay Mishra",
     description: "Curated video editing portfolio.",
-    url: "https://abhay-portfolio.vercel.app/portfolio",
+    url: "https://abhay-editing-portfolio-website.vercel.app/portfolio",
     type: "website",
   },
   twitter: {

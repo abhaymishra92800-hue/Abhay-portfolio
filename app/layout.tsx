@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://abhay-portfolio.vercel.app"),
+  metadataBase: new URL("https://abhay-editing-portfolio-website.vercel.app"),
   title: {
     default: "Abhay Mishra | Video Editor & Social Media Manager",
     template: "%s | Abhay Mishra",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: "Abhay Mishra | Portfolio",
     description: "Video editor and social media manager. YouTube, LinkedIn, and content automation.",
-    url: "https://abhay-portfolio.vercel.app",
+    url: "https://abhay-editing-portfolio-website.vercel.app",
     images: [
       {
         url: "/api/og",
@@ -67,10 +67,10 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": "ProfessionalService",
-                  "@id": "https://abhay-portfolio.vercel.app/#business",
+                  "@id": "https://abhay-editing-portfolio-website.vercel.app/#business",
                   name: "Abhay Mishra — Video Editing & Social Media Management",
-                  url: "https://abhay-portfolio.vercel.app",
-                  image: "https://abhay-portfolio.vercel.app/api/og",
+                  url: "https://abhay-editing-portfolio-website.vercel.app",
+                  image: "https://abhay-editing-portfolio-website.vercel.app/api/og",
                   email: "abhayworkofficial@gmail.com",
                   priceRange: "$$",
                   areaServed: "Worldwide",
@@ -92,7 +92,7 @@ export default function RootLayout({
                 {
                   "@type": "Person",
                   name: "Abhay Mishra",
-                  url: "https://abhay-portfolio.vercel.app",
+                  url: "https://abhay-editing-portfolio-website.vercel.app",
                   jobTitle: "Video Editor & Social Media Manager",
                   email: "abhayworkofficial@gmail.com",
                   knowsAbout: [
@@ -106,8 +106,8 @@ export default function RootLayout({
                 },
                 {
                   "@type": "WebSite",
-                  "@id": "https://abhay-portfolio.vercel.app/#website",
-                  url: "https://abhay-portfolio.vercel.app",
+                  "@id": "https://abhay-editing-portfolio-website.vercel.app/#website",
+                  url: "https://abhay-editing-portfolio-website.vercel.app",
                   name: "Abhay Mishra",
                   inLanguage: "en",
                 },
