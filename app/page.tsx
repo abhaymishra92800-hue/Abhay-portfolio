@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import VideoGrid from "@/components/VideoGrid";
+import IdeaToVideo from "@/components/IdeaToVideo";
 import { longFormVideos, shortFormVideos } from "@/lib/videos";
 import { site, services } from "@/lib/site";
 
@@ -73,6 +74,22 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ─── IDEA TO VIDEO ─── */}
+      <section className="py-20 bg-surface-container-low/40 border-b border-outline-variant/30">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
+          <ScrollReveal>
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">From idea to video</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-4">You bring the idea. I make the video.</h2>
+              <p className="text-on-surface-variant text-base md:text-lg">
+                No footage needed. One line from the client, and I handle the script, design, edit, and sound.
+              </p>
+            </div>
+          </ScrollReveal>
+          <IdeaToVideo />
         </div>
       </section>
 
