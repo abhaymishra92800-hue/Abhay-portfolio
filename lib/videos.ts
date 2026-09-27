@@ -32,3 +32,24 @@ export const shortFormVideos: Video[] = [
 ];
 
 export const instagramReels: string[] = ["DBZTDRAxzGw", "DC40WUQRFQx", "DDfMjVppsJB"];
+
+// Videos built from a one-line idea: scripted, designed and edited end to end.
+// Files live in /public/showcase (web-compressed 720p copies of the masters).
+export type ShowcaseVideo = { src: string; poster: string; title: string; client: string; idea: string };
+
+export const showcaseVideos: ShowcaseVideo[] = [
+  {
+    src: "/showcase/merlin.mp4",
+    poster: "/showcase/merlin.jpg",
+    title: "Real estate ad · 72s",
+    client: "Merlin Group, Kolkata",
+    idea: "Make an ad that shows off our ongoing projects and gets people to book a site visit.",
+  },
+  {
+    src: "/showcase/jev.mp4",
+    poster: "/showcase/jev.jpg",
+    title: "Tech explainer · 75s",
+    client: "Claude Code plugin",
+    idea: "Explain this new Claude Code plugin in a short that developers will actually watch.",
+  },
+];
