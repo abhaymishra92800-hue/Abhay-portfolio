@@ -3,6 +3,7 @@ import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import WorkShowcase from "@/components/WorkShowcase";
 import AutoVideo from "@/components/AutoVideo";
+import YouTubeLoop from "@/components/YouTubeLoop";
 import VideoGrid from "@/components/VideoGrid";
 import Testimonials from "@/components/Testimonials";
 import { workCategories, longFormVideos, shortFormVideos } from "@/lib/videos";
@@ -19,7 +20,7 @@ const heroClips = {
   ugc: { src: "/portfolio/dogshood.mp4", poster: "/portfolio/dogshood.jpg", title: "UGC ad" },
   realEstate: { src: "/portfolio/srijan-orizon.mp4", poster: "/portfolio/srijan-orizon.jpg", title: "Real estate ad" },
   short: { src: "/portfolio/hero-short.mp4", poster: "/portfolio/hero-short.jpg", title: "Short-form edit" },
-  long: { src: "/portfolio/hero-longform.mp4", poster: "/portfolio/hero-longform.jpg", title: "Long-form edit" },
+  long: { id: "-SYqXdaZXl8", title: "Long-form edit", start: 90 }, // Circle: Dan Koe interview
 };
 
 function HeroLabel({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -98,23 +99,23 @@ export default function Home() {
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[320px] sm:max-w-md lg:max-w-[480px] aspect-[5/6]">
               <div className="absolute left-0 top-[3%] w-[31%] -rotate-6 opacity-80 z-0">
-                <AutoVideo quiet {...heroClips.ugc} className="aspect-[9/16] rounded-xl ring-1 ring-white/70 shadow-xl" />
-                <HeroLabel className="left-1 top-1">UGC ad</HeroLabel>
+                <AutoVideo quiet {...heroClips.short} className="aspect-[9/16] rounded-xl ring-1 ring-white/70 shadow-xl" />
+                <HeroLabel className="left-1 top-1">Short-form edit</HeroLabel>
               </div>
               <div className="absolute left-[34%] top-0 w-[31%] opacity-70 z-0">
                 <AutoVideo quiet {...heroClips.realEstate} className="aspect-[9/16] rounded-xl ring-1 ring-white/70 shadow-xl" />
                 <HeroLabel className="left-1 top-1">Real estate ad</HeroLabel>
               </div>
               <div className="absolute right-0 top-[3%] w-[31%] rotate-6 opacity-80 z-0">
-                <AutoVideo quiet {...heroClips.short} className="aspect-[9/16] rounded-xl ring-1 ring-white/70 shadow-xl" />
-                <HeroLabel className="left-1 top-1">Short-form edit</HeroLabel>
+                <AutoVideo quiet {...heroClips.ugc} className="aspect-[9/16] rounded-xl ring-1 ring-white/70 shadow-xl" />
+                <HeroLabel className="left-1 top-1">UGC ad</HeroLabel>
               </div>
-              <div className="absolute left-[-3%] bottom-[9%] w-[46%] -rotate-3 opacity-90 z-[5]">
-                <AutoVideo quiet {...heroClips.long} className="aspect-video rounded-xl ring-1 ring-white/70 shadow-xl" />
+              <div className="absolute right-[-3%] bottom-[9%] w-[46%] rotate-3 opacity-90 z-[5]">
+                <YouTubeLoop {...heroClips.long} className="aspect-video rounded-xl ring-1 ring-white/70 shadow-xl" />
                 <HeroLabel className="left-1 top-1">Long-form edit</HeroLabel>
               </div>
 
-              <div className="absolute right-[2%] bottom-0 w-[58%] aspect-[4/5] rounded-3xl overflow-hidden border-2 border-white/80 shadow-2xl z-10 bg-gradient-to-tr from-indigo-100 via-purple-50 to-pink-50">
+              <div className="absolute left-[2%] bottom-0 w-[58%] aspect-[4/5] rounded-3xl overflow-hidden border-2 border-white/80 shadow-2xl z-10 bg-gradient-to-tr from-indigo-100 via-purple-50 to-pink-50">
                 <Image
                   src={site.photo}
                   alt={site.name}
