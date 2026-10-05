@@ -14,12 +14,23 @@ const projectCount = Math.floor(allWork.length / 5) * 5;
 
 const stats = [...credibilityStats, { value: `${projectCount}+`, label: "Ad & film projects" }];
 
-// Reels that sit behind the profile photo in the hero.
-const heroReels = {
-  left: { src: "/portfolio/woodsmen.mp4", poster: "/portfolio/woodsmen.jpg", title: "UGC ad" },
-  center: { src: "/portfolio/srijan-orizon.mp4", poster: "/portfolio/srijan-orizon.jpg", title: "Real estate ad" },
-  right: { src: "/portfolio/dogshood.mp4", poster: "/portfolio/dogshood.jpg", title: "UGC ad" },
+// One clip per kind of work, shown behind the profile photo in the hero.
+const heroClips = {
+  ugc: { src: "/portfolio/dogshood.mp4", poster: "/portfolio/dogshood.jpg", title: "UGC ad" },
+  realEstate: { src: "/portfolio/srijan-orizon.mp4", poster: "/portfolio/srijan-orizon.jpg", title: "Real estate ad" },
+  short: { src: "/portfolio/hero-short.mp4", poster: "/portfolio/hero-short.jpg", title: "Short-form edit" },
+  long: { src: "/portfolio/hero-longform.mp4", poster: "/portfolio/hero-longform.jpg", title: "Long-form edit" },
 };
+
+function HeroLabel({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return (
+    <span
+      className={`absolute z-20 text-[9px] sm:text-[11px] font-bold text-on-surface bg-white/90 backdrop-blur px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full shadow ${className}`}
+    >
+      {children}
+    </span>
+  );
+}
 
 const steps = [
   { icon: "chat", title: "Share the idea", desc: "Send a one-line idea, your footage, or a project link. A short brief fixes the goal before I start." },
@@ -83,36 +94,36 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Photo in front, real ad work playing softly behind */}
+          {/* Photo in front; one clip per kind of work playing softly behind */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[300px] sm:max-w-md lg:max-w-[460px] aspect-[5/6]">
-              <div className="absolute left-[33%] top-0 w-[34%] opacity-60 z-0">
-                <AutoVideo quiet {...heroReels.center} className="aspect-[9/16] rounded-2xl ring-1 ring-white/70" />
+            <div className="relative w-full max-w-[320px] sm:max-w-md lg:max-w-[480px] aspect-[5/6]">
+              <div className="absolute left-0 top-[3%] w-[31%] -rotate-6 opacity-80 z-0">
+                <AutoVideo quiet {...heroClips.ugc} className="aspect-[9/16] rounded-xl ring-1 ring-white/70 shadow-xl" />
+                <HeroLabel className="left-1 top-1">UGC ad</HeroLabel>
               </div>
-              <div className="absolute left-0 top-[6%] w-[37%] -rotate-6 opacity-75 z-0">
-                <AutoVideo quiet {...heroReels.left} className="aspect-[9/16] rounded-2xl ring-1 ring-white/70 shadow-xl" />
+              <div className="absolute left-[34%] top-0 w-[31%] opacity-70 z-0">
+                <AutoVideo quiet {...heroClips.realEstate} className="aspect-[9/16] rounded-xl ring-1 ring-white/70 shadow-xl" />
+                <HeroLabel className="left-1 top-1">Real estate ad</HeroLabel>
               </div>
-              <div className="absolute right-0 top-[2%] w-[37%] rotate-6 opacity-75 z-0">
-                <AutoVideo quiet {...heroReels.right} className="aspect-[9/16] rounded-2xl ring-1 ring-white/70 shadow-xl" />
+              <div className="absolute right-0 top-[3%] w-[31%] rotate-6 opacity-80 z-0">
+                <AutoVideo quiet {...heroClips.short} className="aspect-[9/16] rounded-xl ring-1 ring-white/70 shadow-xl" />
+                <HeroLabel className="left-1 top-1">Short-form edit</HeroLabel>
+              </div>
+              <div className="absolute left-[-3%] bottom-[9%] w-[46%] -rotate-3 opacity-90 z-[5]">
+                <AutoVideo quiet {...heroClips.long} className="aspect-video rounded-xl ring-1 ring-white/70 shadow-xl" />
+                <HeroLabel className="left-1 top-1">Long-form edit</HeroLabel>
               </div>
 
-              <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[60%] aspect-[4/5] rounded-3xl overflow-hidden border-2 border-white/80 shadow-2xl z-10 bg-gradient-to-tr from-indigo-100 via-purple-50 to-pink-50">
+              <div className="absolute right-[2%] bottom-0 w-[58%] aspect-[4/5] rounded-3xl overflow-hidden border-2 border-white/80 shadow-2xl z-10 bg-gradient-to-tr from-indigo-100 via-purple-50 to-pink-50">
                 <Image
                   src={site.photo}
                   alt={site.name}
                   fill
-                  sizes="(max-width: 1024px) 60vw, 280px"
+                  sizes="(max-width: 1024px) 58vw, 280px"
                   className="object-cover object-top"
                   priority
                 />
               </div>
-
-              <span className="absolute left-[2%] bottom-[14%] z-20 text-xs font-bold text-on-surface bg-white/90 backdrop-blur px-3 py-1.5 rounded-full shadow-lg">
-                Long-form &amp; shorts
-              </span>
-              <span className="absolute right-[2%] bottom-[28%] z-20 text-xs font-bold text-on-surface bg-white/90 backdrop-blur px-3 py-1.5 rounded-full shadow-lg">
-                Ads &amp; social
-              </span>
             </div>
           </div>
         </div>
