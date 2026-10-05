@@ -77,5 +77,44 @@ export const beliefs = [
   },
 ];
 
-// Real quotes from Abhay's own clients only. Leave empty until you have them; the section stays hidden.
-export const testimonials: { quote: string; name: string; role: string }[] = [];
+// Headline numbers, shared by the home and About pages.
+export const credibilityStats = [
+  { value: "777", label: "Videos edited" },
+  { value: "1M+", label: "Audience reach" },
+  { value: "30%", label: "Audience retention" },
+];
+
+// Client reviews, quoted exactly as published on anuj4u.in. Names and wording are not altered.
+export const testimonialsSource = { label: "anuj4u.in", href: "https://anuj4u.in" };
+
+export const testimonials: { quote: string; name: string; role: string }[] = [
+  {
+    quote:
+      "Anuj has been monumental in creating my podcast. While he creates thumbnails, edits content and can create descriptions too, he doesn't stop there. He has a vast knowledge of softwares available and has guided me more than I could ever hope for with setting up my podcast. He has a solid work ethic and is awesome at receiving feedback. He has a great attitude and while his work speaks for itself, his character matches! I would highly recommend hiring Anuj for anything social media or even to consult him for guidance. You will not be disappointed!",
+    name: "Harjeet Dhillon",
+    role: "Canadian actress and author",
+  },
+  {
+    quote:
+      "Anuj has been a game-changer for my video production, handling both long-form YouTube edits and sales-page VSLs with excellent results. His fast, reliable WhatsApp communication saves me days every week while making my videos look more professional than ever. I wouldn't hesitate to hire him again for Descript editing. Give him a clear script with b-roll and SFX notes and watch him deliver!",
+    name: "Victor Chan",
+    role: "YouTuber & Founder of Launch Excel",
+  },
+  {
+    quote:
+      "I hired Anuj to do Video editing + graphic design work for my Youtube channel https://www.youtube.com/@TrainingScientists . He did an excellent job and always responds very quickly and produces great results. I am very happy working with him and will continue to do so in the future",
+    name: "Dr. Maurice Maurer",
+    role: "PhD in Computational Physics",
+  },
+  {
+    quote:
+      "Anuj helped create video layouts for my podcast which look great and work perfectly whilst saving me so much time. Generous with his time and would highly recommend! Thank you Anuj!",
+    name: "Blake Reddy",
+    role: "Private Client Wealth Adviser",
+  },
+  {
+    quote: "Anuj is great! Professional, fast, and easy to work with.",
+    name: "Ross Zeiger",
+    role: "Descript Mastery",
+  },
+];

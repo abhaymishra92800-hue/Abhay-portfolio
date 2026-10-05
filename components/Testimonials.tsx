@@ -1,7 +1,7 @@
 import ScrollReveal from "@/components/ScrollReveal";
-import { testimonials } from "@/lib/site";
+import { testimonials, testimonialsSource } from "@/lib/site";
 
-// Renders nothing until real quotes from Abhay's own clients are added to `testimonials` in lib/site.ts.
+// Renders nothing while `testimonials` in lib/site.ts is empty. Quotes are shown exactly as published.
 export default function Testimonials() {
   if (testimonials.length === 0) return null;
   return (
@@ -10,7 +10,13 @@ export default function Testimonials() {
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-10">
             <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Kind words</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-on-surface">What clients say</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-2">What clients say</h2>
+            <p className="text-sm text-on-surface-variant">
+              Reviews as published on{" "}
+              <a href={testimonialsSource.href} target="_blank" rel="noreferrer" className="font-semibold text-primary hover:underline">
+                {testimonialsSource.label}
+              </a>
+            </p>
           </div>
         </ScrollReveal>
         <ScrollReveal stagger>
@@ -20,7 +26,7 @@ export default function Testimonials() {
                 key={t.name}
                 className="reveal glass-card rounded-3xl p-7 text-center border border-outline-variant/40 bg-surface-container-lowest w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
               >
-                <blockquote className="text-on-surface leading-relaxed mb-5">&ldquo;{t.quote}&rdquo;</blockquote>
+                <blockquote className="text-sm md:text-base text-on-surface leading-relaxed mb-5">&ldquo;{t.quote}&rdquo;</blockquote>
                 <figcaption>
                   <p className="font-bold text-on-surface">{t.name}</p>
                   <p className="text-xs text-on-surface-variant">{t.role}</p>

@@ -6,18 +6,13 @@ import AutoVideo from "@/components/AutoVideo";
 import VideoGrid from "@/components/VideoGrid";
 import Testimonials from "@/components/Testimonials";
 import { workCategories, longFormVideos, shortFormVideos } from "@/lib/videos";
-import { site, services } from "@/lib/site";
+import { site, services, credibilityStats } from "@/lib/site";
 
 // Hero numbers come straight from the portfolio data, so they stay true as work is added.
 const allWork = workCategories.flatMap((c) => c.items);
 const projectCount = Math.floor(allWork.length / 5) * 5;
 
-const stats = [
-  { value: "400+", label: "Videos edited" },
-  { value: "1M+", label: "Audience reach" },
-  { value: "30%", label: "Audience retention" },
-  { value: `${projectCount}+`, label: "Ad & film projects" },
-];
+const stats = [...credibilityStats, { value: `${projectCount}+`, label: "Ad & film projects" }];
 
 // Reels that sit behind the profile photo in the hero.
 const heroReels = {
