@@ -37,7 +37,7 @@ export default function PortfolioPage() {
           My <span className="gradient-text">Portfolio</span>
         </h1>
         <p className="text-lg text-on-surface-variant max-w-2xl leading-relaxed">
-          Real estate ads, UGC, cinematic films, and explainers, plus long-form YouTube edits and shorts. Click any video to play it here.
+          Property ads, UGC, launch films, and explainers built to bring in leads and sales, plus long-form YouTube edits and shorts. Tap a video to hear it.
         </p>
       </section>
 

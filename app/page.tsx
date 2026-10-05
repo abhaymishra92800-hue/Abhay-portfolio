@@ -1,11 +1,17 @@
 import Link from "next/link";
-import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import VideoGrid from "@/components/VideoGrid";
 import WorkShowcase from "@/components/WorkShowcase";
+import AutoVideo from "@/components/AutoVideo";
 import { longFormVideos, shortFormVideos, workCategories } from "@/lib/videos";
 import { site, services } from "@/lib/site";
 
+
+const heroReels = [
+  { src: "/portfolio/srijan-orizon.mp4", poster: "/portfolio/srijan-orizon.jpg", title: "Real estate ad" },
+  { src: "/portfolio/woodsmen.mp4", poster: "/portfolio/woodsmen.jpg", title: "UGC ad" },
+  { src: "/portfolio/orbit-tarang.mp4", poster: "/portfolio/orbit-tarang.jpg", title: "Property launch" },
+];
 
 const stats = [
   { value: "400+", label: "Videos edited" },
@@ -24,11 +30,11 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16 flex flex-col-reverse lg:flex-row items-center gap-12">
           <div className="w-full lg:w-1/2">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-on-surface leading-[1.1] tracking-tight mb-5">
-              Videos that keep people <span className="gradient-text">watching.</span>
+              Videos that turn viewers into <span className="gradient-text">customers.</span>
             </h1>
             <p className="text-lg md:text-xl text-on-surface-variant mb-8 max-w-xl leading-relaxed">
-              I&apos;m Abhay. I edit videos and run YouTube and LinkedIn for creators and founders,
-              so your content earns more views, more watch time, and more clients.
+              I&apos;m Abhay. I make ads, launch films, and explainers built to convert: site visits for
+              real estate, sales for brands, and subscribers for creators.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 mb-10">
@@ -59,19 +65,15 @@ export default function Home() {
           </div>
 
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg">
-              <div className="relative rounded-3xl overflow-hidden glass-card p-3 shadow-2xl border border-white/60 bg-white/40">
-                <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-tr from-indigo-100 via-purple-50 to-pink-50">
-                  <Image
-                    src={site.photo}
-                    alt={site.name}
-                    fill
-                    sizes="(max-width: 1024px) 90vw, 45vw"
-                    className="object-cover object-top"
-                    priority
-                  />
+            <div className="flex items-center justify-center gap-3 sm:gap-4 w-full max-w-md lg:max-w-lg">
+              {heroReels.map((r, i) => (
+                <div
+                  key={r.src}
+                  className={`flex-1 rounded-[1.6rem] p-1.5 bg-on-surface shadow-2xl ${i === 1 ? "-translate-y-6" : i === 2 ? "translate-y-4" : ""}`}
+                >
+                  <AutoVideo src={r.src} poster={r.poster} title={r.title} className="aspect-[9/16] rounded-[1.25rem]" />
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -82,14 +84,14 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
           <ScrollReveal>
             <div className="max-w-2xl mb-14">
-              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Selected work</p>
-              <h2 className="text-3xl md:text-5xl font-extrabold text-on-surface mb-4">Ads and films that sell.</h2>
+              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Work that converts</p>
+              <h2 className="text-3xl md:text-5xl font-extrabold text-on-surface mb-4">Every video has one job: get the viewer to act.</h2>
               <p className="text-on-surface-variant text-base md:text-lg">
-                Real estate, UGC, cinematic and explainer videos made for real brands. Click any video to play it.
+                Property launches, UGC ads, cinematic films, and explainers made for real brands. Tap a video to hear it.
               </p>
             </div>
           </ScrollReveal>
-          <WorkShowcase categories={workCategories} limit={5} />
+          <WorkShowcase categories={workCategories} initial={5} />
           <div className="mt-14">
             <Link href="/portfolio" className="text-sm font-bold text-primary inline-flex items-center gap-1 hover:gap-2 transition-all">
               See all work

@@ -6,7 +6,7 @@ import { site, services } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Services | Abhay Mishra",
   description:
-    "Video editing, shorts and reels, YouTube channel management, LinkedIn management, and content automation by Abhay Mishra.",
+    "Ads and sales videos, video editing, shorts and reels, YouTube channel management, LinkedIn management, and content automation by Abhay Mishra.",
   alternates: { canonical: "/services" },
 };
 

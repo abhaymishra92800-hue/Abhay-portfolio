@@ -36,13 +36,15 @@ export const instagramReels: string[] = ["DBZTDRAxzGw", "DC40WUQRFQx", "DDfMjVpp
 
 // Brand and ad work, grouped by category. Files live in /public/portfolio and /public/showcase
 // (web-compressed copies of the masters). Add an entry to a category and it appears on the site.
+// One entry = one project. Put extra languages in `versions` so a project never shows twice.
+export type WorkVersion = { src: string; poster: string; lang?: string };
+
 export type Work = {
-  src: string;
-  poster: string;
   title: string;
   client: string;
-  lang?: string;
+  versions: WorkVersion[];
   landscape?: boolean;
+  tag?: string;
 };
 
 export type WorkCategory = {
@@ -53,62 +55,61 @@ export type WorkCategory = {
   items: Work[];
 };
 
-const p = (name: string) => ({ src: `/portfolio/${name}.mp4`, poster: `/portfolio/${name}.jpg` });
+const v = (name: string, lang?: string): WorkVersion => ({ src: `/portfolio/${name}.mp4`, poster: `/portfolio/${name}.jpg`, lang });
 
 export const workCategories: WorkCategory[] = [
   {
     id: "real-estate-ads",
     eyebrow: "Real estate",
-    title: "Property explainer ads",
-    blurb: "Motion-graphic ads for developers across Kolkata. Clean layouts, local-language voiceovers, built to drive site visits.",
+    title: "Property ads that get site visits",
+    blurb: "One tight story per project: the home, the location, the price, and a clear next step. Delivered in English and Bengali where the project needs it.",
     items: [
-      { ...p("srijan-orizon"), title: "Srijan Orizon", client: "Srijan Realty", lang: "EN" },
-      { ...p("eshaana-en"), title: "Eshaana", client: "Eshaana", lang: "EN" },
-      { ...p("eshaana-bn"), title: "Eshaana", client: "Eshaana", lang: "বাংলা" },
-      { ...p("orbit-tarang"), title: "Orbit Tarang", client: "Orbit Group", lang: "EN" },
-      { ...p("orbit-dakshini"), title: "Orbit Dakshini", client: "Orbit Group", lang: "বাংলা" },
-      { ...p("rameswara-en"), title: "Rameswara Riverview", client: "Rameswara", lang: "EN" },
-      { ...p("rameswara-bn"), title: "Rameswara Riverview", client: "Rameswara", lang: "বাংলা" },
-      { ...p("mirania-evara"), title: "Mirania Evara", client: "Mirania", lang: "EN" },
-      { ...p("srijan-optima"), title: "Srijan Optima", client: "Srijan Realty", lang: "EN" },
-      { ...p("srijan-all"), title: "Srijan Portfolio", client: "Srijan Realty", lang: "EN" },
-      { ...p("srijan-ps-group"), title: "Srijan · PS Group", client: "Srijan Realty", lang: "EN" },
-      { ...p("orbit-portfolio"), title: "Orbit Portfolio", client: "Orbit Group", lang: "EN" },
-      { ...p("porshi-nagar"), title: "Porshi Nagar", client: "Porshi Nagar", lang: "EN" },
-      { ...p("nk-brand"), title: "NK Brand Film", client: "NK", lang: "EN" },
-      { ...p("nk-godrej-blue"), title: "Godrej Blue", client: "NK", lang: "EN" },
-      { src: "/showcase/merlin.mp4", poster: "/showcase/merlin.jpg", title: "Ongoing Projects", client: "Merlin Group", lang: "EN" },
-    ],
-  },
-  {
-    id: "location-films",
-    eyebrow: "Cinematic",
-    title: "Location & project films",
-    blurb: "Satellite zoom-ins, real nearby-place research, and premium 4K footage, from the whole world down to the plot.",
-    items: [
-      { ...p("orbit-sky-royale"), title: "Sky Royale", client: "Orbit Group", landscape: true },
-      { ...p("orbit-urban-park"), title: "Urban Park", client: "Orbit Group", landscape: true },
-      { ...p("emaar-golf-vale"), title: "Golf Vale", client: "Emaar" },
+      { title: "Srijan Orizon", client: "Srijan Realty", versions: [v("srijan-orizon")] },
+      { title: "Eshaana", client: "Eshaana", versions: [v("eshaana-en", "EN"), v("eshaana-bn", "বাংলা")] },
+      { title: "Rameswara Riverview", client: "Rameswara", versions: [v("rameswara-en", "EN"), v("rameswara-bn", "বাংলা")] },
+      { title: "Orbit Tarang", client: "Orbit Group", versions: [v("orbit-tarang")] },
+      { title: "Mirania Evara", client: "Mirania", versions: [v("mirania-evara")] },
+      { title: "Orbit Dakshini", client: "Orbit Group", versions: [v("orbit-dakshini", "বাংলা")] },
+      { title: "Srijan Optima", client: "Srijan Realty", versions: [v("srijan-optima")] },
+      { title: "Porshi Nagar", client: "Porshi Nagar", versions: [v("porshi-nagar")] },
+      { title: "Godrej Blue", client: "NK", versions: [v("nk-godrej-blue")] },
+      { title: "NK Brand Film", client: "NK", versions: [v("nk-brand")] },
+      { title: "Srijan Portfolio", client: "Srijan Realty", versions: [v("srijan-all")] },
+      { title: "Srijan · PS Group", client: "Srijan Realty", versions: [v("srijan-ps-group")] },
+      { title: "Orbit Portfolio", client: "Orbit Group", versions: [v("orbit-portfolio")] },
+      { title: "Ongoing Projects", client: "Merlin Group", versions: [{ src: "/showcase/merlin.mp4", poster: "/showcase/merlin.jpg" }] },
     ],
   },
   {
     id: "ugc-ads",
     eyebrow: "UGC",
-    title: "UGC & creator-style ads",
-    blurb: "Native, scroll-stopping ads that feel like a real person talking. Hooks, pacing, and captions tuned for paid social.",
+    title: "UGC ads that look native",
+    blurb: "Creator-style ads that feel like a real person talking, not an ad. Hooks, pacing, and captions tuned for paid social.",
     items: [
-      { ...p("woodsmen"), title: "Woodsmen Whiskey", client: "Woodsmen" },
-      { ...p("dogshood"), title: "Dogshood", client: "Dogshood" },
+      { title: "Woodsmen Whiskey", client: "Woodsmen", versions: [v("woodsmen")] },
+      { title: "Dogshood", client: "Dogshood", versions: [v("dogshood")] },
+    ],
+  },
+  {
+    id: "location-films",
+    eyebrow: "Cinematic",
+    title: "Launch films for premium projects",
+    blurb: "Satellite zoom-ins from the whole world down to the plot, real nearby-place research, and 4K footage that makes a project feel like a landmark.",
+    items: [
+      { title: "Sky Royale", client: "Orbit Group", versions: [v("orbit-sky-royale")], landscape: true },
+      { title: "Urban Park", client: "Orbit Group", versions: [v("orbit-urban-park")], landscape: true },
+      { title: "Golf Vale", client: "Emaar", versions: [v("emaar-golf-vale")] },
     ],
   },
   {
     id: "explainers",
-    eyebrow: "Explainers & clips",
-    title: "Tech explainers & podcast clips",
-    blurb: "Sharp, caption-led shorts that turn long conversations and new tools into something people finish watching.",
+    eyebrow: "Explainers",
+    title: "Explainers & faceless channels",
+    blurb: "Tech explainers and faceless YouTube shorts: sharp scripts, motion graphics, and captions that hold attention without a person on camera.",
     items: [
-      { src: "/showcase/jev.mp4", poster: "/showcase/jev.jpg", title: "Claude Code Plugin", client: "Tech explainer" },
-      { ...p("base360"), title: "Podcast Highlights", client: "Base 360" },
+      { title: "Claude Code Plugin", client: "Tech explainer", versions: [{ src: "/showcase/jev.mp4", poster: "/showcase/jev.jpg" }] },
+      { title: "Why is milk at the back of the store?", client: "KnowLayer · faceless channel", versions: [v("knowlayer-milk")], tag: "Faceless channel" },
+      { title: "Why does a phone cost $899?", client: "KnowLayer · faceless channel", versions: [v("knowlayer-phone")], tag: "Faceless channel" },
     ],
   },
 ];
