@@ -76,3 +76,6 @@ export const beliefs = [
     desc: "AI saves real time on drafting, research, and atmosphere shots. Anything the viewer can check against real life gets shot for real.",
   },
 ];
+
+// Real quotes from Abhay's own clients only. Leave empty until you have them; the section stays hidden.
+export const testimonials: { quote: string; name: string; role: string }[] = [];

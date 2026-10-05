@@ -67,8 +67,8 @@ function Category({ c, initial }: { c: WorkCategory; initial?: number }) {
     <div id={c.id} className="scroll-mt-24">
       <div className="max-w-2xl mx-auto text-center mb-8">
         <p className="text-xs font-bold text-primary uppercase tracking-widest mb-2">{c.eyebrow}</p>
-        <h3 className="text-2xl md:text-3xl font-bold text-on-surface mb-2">{c.title}</h3>
-        <p className="text-on-surface-variant">{c.blurb}</p>
+        <h3 className="text-xl md:text-3xl font-bold text-on-surface mb-2">{c.title}</h3>
+        <p className="hidden sm:block text-on-surface-variant">{c.blurb}</p>
       </div>
       <div className="flex flex-wrap justify-center items-start gap-4 lg:gap-5">
         {[...items.filter((i) => i.landscape), ...items.filter((i) => !i.landscape)].map((w) => (
@@ -96,7 +96,7 @@ function Category({ c, initial }: { c: WorkCategory; initial?: number }) {
 
 export default function WorkShowcase({ categories, initial }: { categories: WorkCategory[]; initial?: number }) {
   return (
-    <div className="space-y-20">
+    <div className="space-y-14 md:space-y-20">
       {categories.map((c) => (
         <Category key={c.id} c={c} initial={initial} />
       ))}

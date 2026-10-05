@@ -2,7 +2,9 @@ import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
 import WorkShowcase from "@/components/WorkShowcase";
-import { workCategories } from "@/lib/videos";
+import VideoGrid from "@/components/VideoGrid";
+import Testimonials from "@/components/Testimonials";
+import { workCategories, longFormVideos, shortFormVideos } from "@/lib/videos";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -32,14 +34,14 @@ export default function PortfolioPage() {
         <div className="inline-block text-[10px] font-bold uppercase tracking-widest text-primary bg-primary/10 px-2.5 py-1 rounded-full mb-4">
           Selected work
         </div>
-        <h1 className="text-4xl md:text-6xl font-extrabold text-on-surface mb-4 leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-on-surface mb-4 leading-tight">
           Videos built to <span className="gradient-text">convert</span>
         </h1>
         <p className="text-lg text-on-surface-variant leading-relaxed">
-          Property ads, UGC ads, launch films, and explainers made for real brands. Tap a video to hear it.
+          Property ads, UGC ads, launch films, explainers, and YouTube edits. Tap a video to hear it.
         </p>
         <div className="flex flex-wrap justify-center gap-2 mt-6">
-          {workCategories.map((c) => (
+          {[...workCategories, { id: "long-form", eyebrow: "YouTube" }].map((c) => (
             <a
               key={c.id}
               href={`#${c.id}`}
@@ -54,6 +56,21 @@ export default function PortfolioPage() {
       <section className="relative z-10">
         <WorkShowcase categories={workCategories} />
       </section>
+
+      <section id="long-form" className="relative z-10 mt-20 scroll-mt-24">
+        <div className="text-center max-w-2xl mx-auto mb-8">
+          <p className="text-xs font-bold text-primary uppercase tracking-widest mb-2">YouTube</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-on-surface">Long-form edits</h2>
+        </div>
+        <VideoGrid videos={longFormVideos} />
+        <div className="text-center mt-14 mb-8">
+          <p className="text-xs font-bold text-primary uppercase tracking-widest mb-2">Short-form</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-on-surface">Shorts &amp; reels</h2>
+        </div>
+        <VideoGrid videos={shortFormVideos} vertical />
+      </section>
+
+      <Testimonials />
 
       <section className="mt-24 relative z-10">
         <div className="glass-card rounded-3xl p-8 text-center max-w-3xl mx-auto bg-gradient-to-br from-primary/10 to-primary/5 shadow-2xl">
