@@ -3,19 +3,20 @@ import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import WorkShowcase from "@/components/WorkShowcase";
 import AutoVideo from "@/components/AutoVideo";
-import { workCategories } from "@/lib/videos";
+import VideoGrid from "@/components/VideoGrid";
+import Testimonials from "@/components/Testimonials";
+import { workCategories, longFormVideos, shortFormVideos } from "@/lib/videos";
 import { site, services } from "@/lib/site";
 
 // Hero numbers come straight from the portfolio data, so they stay true as work is added.
 const allWork = workCategories.flatMap((c) => c.items);
 const projectCount = Math.floor(allWork.length / 5) * 5;
-const realEstateCount = workCategories.find((c) => c.id === "real-estate-ads")?.items.length ?? 0;
-const languageCount = new Set(allWork.flatMap((w) => w.versions.map((v) => v.lang).filter(Boolean))).size;
 
 const stats = [
+  { value: "400+", label: "Videos edited" },
+  { value: "1M+", label: "Audience reach" },
+  { value: "30%", label: "Audience retention" },
   { value: `${projectCount}+`, label: "Ad & film projects" },
-  { value: `${realEstateCount}`, label: "Real estate projects" },
-  { value: `${languageCount}`, label: "Languages" },
 ];
 
 // Reels that sit behind the profile photo in the hero.
@@ -45,35 +46,35 @@ export default function Home() {
               <span className="block whitespace-nowrap">Videos that turn viewers</span>
               <span className="block whitespace-nowrap gradient-text">into customers.</span>
             </h1>
-            <p className="text-lg md:text-xl text-on-surface-variant mb-8 max-w-xl leading-relaxed">
+            <p className="text-base md:text-xl text-on-surface-variant mb-6 md:mb-8 max-w-xl leading-relaxed">
               I&apos;m Abhay. I make ads, launch films, and explainers built to convert: site visits for
               real estate, sales for brands, and subscribers for creators.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 mb-10">
+            <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-8 md:mb-10">
               <a
                 href={site.callHref}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-primary hover:bg-primary-container text-white font-semibold py-3.5 px-8 rounded-full transition-all duration-300 shadow-lg shadow-indigo-500/25 hover:scale-105 active:scale-95 flex items-center gap-2"
+                className="bg-primary hover:bg-primary-container text-white font-semibold py-3 px-5 text-sm md:text-base md:py-3.5 md:px-8 rounded-full transition-all duration-300 shadow-lg shadow-indigo-500/25 hover:scale-105 active:scale-95 flex items-center gap-2"
               >
                 <span className="material-symbols-outlined text-lg" aria-hidden="true">call</span>
                 Book a call
               </a>
               <a
                 href="#work"
-                className="bg-white/80 hover:bg-white border border-outline-variant/60 text-on-surface font-semibold py-3.5 px-8 rounded-full transition-all duration-300 shadow-sm hover:scale-105 flex items-center gap-2"
+                className="bg-white/80 hover:bg-white border border-outline-variant/60 text-on-surface font-semibold py-3 px-5 text-sm md:text-base md:py-3.5 md:px-8 rounded-full transition-all duration-300 shadow-sm hover:scale-105 flex items-center gap-2"
               >
                 <span className="material-symbols-outlined text-lg" aria-hidden="true">play_circle</span>
                 See the work
               </a>
             </div>
 
-            <div className="flex flex-wrap gap-x-8 gap-y-6">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-5 max-w-xl">
               {stats.map((s) => (
                 <div key={s.label}>
-                  <p className="text-4xl md:text-5xl font-extrabold text-on-surface leading-none mb-2">{s.value}</p>
-                  <p className="text-xs md:text-sm text-on-surface-variant uppercase tracking-wider">{s.label}</p>
+                  <p className="text-3xl md:text-4xl font-extrabold text-on-surface leading-none mb-1.5">{s.value}</p>
+                  <p className="text-[11px] md:text-xs text-on-surface-variant uppercase tracking-wider">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -81,7 +82,7 @@ export default function Home() {
 
           {/* Photo in front, real ad work playing softly behind */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[420px] sm:max-w-md lg:max-w-[460px] aspect-[5/6]">
+            <div className="relative w-full max-w-[300px] sm:max-w-md lg:max-w-[460px] aspect-[5/6]">
               <div className="absolute left-[33%] top-0 w-[34%] opacity-60 z-0">
                 <AutoVideo quiet {...heroReels.center} className="aspect-[9/16] rounded-2xl ring-1 ring-white/70" />
               </div>
@@ -115,18 +116,18 @@ export default function Home() {
       </section>
 
       {/* ─── AD & BRAND WORK ─── */}
-      <section id="work" className="py-20 bg-surface-container-low/40 border-b border-outline-variant/30 scroll-mt-20">
+      <section id="work" className="py-14 md:py-20 bg-surface-container-low/40 border-b border-outline-variant/30 scroll-mt-20">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
           <ScrollReveal>
-            <div className="max-w-3xl mx-auto text-center mb-14">
+            <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
               <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Work that converts</p>
-              <h2 className="text-3xl md:text-5xl font-extrabold text-on-surface mb-4">Every video has one job: get the viewer to act.</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-on-surface mb-3 md:mb-4">Every video has one job: get the viewer to act.</h2>
               <p className="text-on-surface-variant text-base md:text-lg">
                 Property launches, UGC ads, cinematic films, and explainers made for real brands. Tap a video to hear it.
               </p>
             </div>
           </ScrollReveal>
-          <WorkShowcase categories={workCategories} initial={5} />
+          <WorkShowcase categories={workCategories} initial={6} />
           <div className="mt-14 text-center">
             <Link href="/portfolio" className="text-sm font-bold text-primary inline-flex items-center gap-1 hover:gap-2 transition-all">
               See all work
@@ -136,8 +137,36 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── LONG-FORM & SHORTS ─── */}
+      <section id="long-form" className="py-14 md:py-20 scroll-mt-20">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
+          <ScrollReveal>
+            <div className="text-center max-w-2xl mx-auto mb-10">
+              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">YouTube</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-2">Long-form edits</h2>
+              <p className="text-on-surface-variant">Episodes, podcasts, and explainers. Click to play.</p>
+            </div>
+          </ScrollReveal>
+          <VideoGrid videos={longFormVideos.slice(0, 6)} />
+          <div className="mt-6 text-center">
+            <Link href="/portfolio#long-form" className="text-sm font-bold text-primary inline-flex items-center gap-1 hover:gap-2 transition-all">
+              See all {longFormVideos.length} videos
+              <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            </Link>
+          </div>
+
+          <div className="text-center mt-14 mb-8">
+            <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Short-form</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-on-surface">Shorts &amp; reels</h2>
+          </div>
+          <VideoGrid videos={shortFormVideos} vertical />
+        </div>
+      </section>
+
+      <Testimonials />
+
       {/* ─── HOW IT WORKS ─── */}
-      <section className="py-20 border-b border-outline-variant/30">
+      <section className="py-14 md:py-20 border-b border-outline-variant/30">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-12">
@@ -163,7 +192,7 @@ export default function Home() {
       </section>
 
       {/* ─── SERVICES ─── */}
-      <section className="py-20 bg-surface-container-low/40">
+      <section className="py-14 md:py-20 bg-surface-container-low/40">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-12">
@@ -184,7 +213,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-lg font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
                   <p className="text-sm text-on-surface-variant leading-relaxed mb-4">{s.desc}</p>
-                  <div className="flex flex-wrap justify-center gap-2">
+                  <div className="hidden sm:flex flex-wrap justify-center gap-2">
                     {s.tools.map((t) => (
                       <span key={t} className="text-[11px] font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-full">
                         {t}
