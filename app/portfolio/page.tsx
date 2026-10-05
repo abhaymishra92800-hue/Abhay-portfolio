@@ -1,25 +1,24 @@
 import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import VideoGrid from "@/components/VideoGrid";
 import WorkShowcase from "@/components/WorkShowcase";
-import { longFormVideos, shortFormVideos, workCategories } from "@/lib/videos";
-
+import { workCategories } from "@/lib/videos";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Portfolio | Abhay Mishra",
-  description: "A curated collection of video editing work — long-form YouTube edits, podcasts, shorts, and reels.",
+  description: "Property ads, UGC ads, cinematic launch films, and faceless-channel explainers built to bring in leads and sales.",
   alternates: { canonical: "/portfolio" },
   openGraph: {
     title: "Portfolio | Abhay Mishra",
-    description: "Curated video editing portfolio.",
+    description: "Ads and films built to convert.",
     url: "https://abhay-editing-portfolio-website.vercel.app/portfolio",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Portfolio | Abhay Mishra",
-    description: "Curated video editing portfolio.",
+    description: "Ads and films built to convert.",
   },
 };
 
@@ -29,44 +28,56 @@ export default function PortfolioPage() {
       <div className="ambient-glow top-0 left-[-100px]"></div>
       <div className="ambient-glow-2 top-1/2 right-[-100px]"></div>
 
-      <section className="mb-12 pt-6 relative z-10">
+      <section className="mb-14 pt-10 relative z-10 text-center max-w-3xl mx-auto">
         <div className="inline-block text-[10px] font-bold uppercase tracking-widest text-primary bg-primary/10 px-2.5 py-1 rounded-full mb-4">
-          Featured work
+          Selected work
         </div>
         <h1 className="text-4xl md:text-6xl font-extrabold text-on-surface mb-4 leading-tight">
-          My <span className="gradient-text">Portfolio</span>
+          Videos built to <span className="gradient-text">convert</span>
         </h1>
-        <p className="text-lg text-on-surface-variant max-w-2xl leading-relaxed">
-          Property ads, UGC, launch films, and explainers built to bring in leads and sales, plus long-form YouTube edits and shorts. Tap a video to hear it.
+        <p className="text-lg text-on-surface-variant leading-relaxed">
+          Property ads, UGC ads, launch films, and explainers made for real brands. Tap a video to hear it.
         </p>
+        <div className="flex flex-wrap justify-center gap-2 mt-6">
+          {workCategories.map((c) => (
+            <a
+              key={c.id}
+              href={`#${c.id}`}
+              className="text-xs font-bold text-primary bg-primary/10 hover:bg-primary hover:text-white px-3.5 py-1.5 rounded-full transition-colors"
+            >
+              {c.eyebrow}
+            </a>
+          ))}
+        </div>
       </section>
 
       <section className="relative z-10">
         <WorkShowcase categories={workCategories} />
       </section>
 
-      <section className="relative z-10 mt-24">
-        <h2 className="text-2xl md:text-3xl font-bold text-on-surface mb-6">Long-form edits</h2>
-        <VideoGrid videos={longFormVideos} />
-        <h2 className="text-2xl md:text-3xl font-bold text-on-surface mt-16 mb-6">Shorts &amp; reels</h2>
-        <VideoGrid videos={shortFormVideos} vertical />
-      </section>
-
-      <section className="mt-16 relative z-10">
+      <section className="mt-24 relative z-10">
         <div className="glass-card rounded-3xl p-8 text-center max-w-3xl mx-auto bg-gradient-to-br from-primary/10 to-primary/5 shadow-2xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-on-surface mb-3">
-            Like what you see?
-          </h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-on-surface mb-3">Want a video like these?</h2>
           <p className="text-on-surface-variant text-sm md:text-base mb-6">
-            Send me your footage or channel link and I&apos;ll reply within 24 hours.
+            Tell me what you&apos;re promoting and I&apos;ll reply within 24 hours.
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-3.5 rounded-full shadow-md hover:bg-primary-container hover:text-on-primary-container hover:scale-105 transition-all"
-          >
-            Get in touch
-            <span className="material-symbols-outlined">arrow_forward</span>
-          </Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href={site.callHref}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 bg-primary text-white font-bold px-8 py-3.5 rounded-full shadow-md hover:bg-primary-container hover:text-on-primary-container hover:scale-105 transition-all"
+            >
+              <span className="material-symbols-outlined text-lg" aria-hidden="true">call</span>
+              Book a call
+            </a>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-surface border border-outline-variant hover:border-primary text-on-surface font-bold px-8 py-3.5 rounded-full hover:scale-105 transition-all"
+            >
+              Send a message
+            </Link>
+          </div>
         </div>
       </section>
     </div>

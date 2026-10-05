@@ -8,7 +8,11 @@ export const site = {
   phone: "+91 79801 19941",
   phoneHref: "tel:+917980119941",
   whatsapp: "https://wa.me/917980119941",
-  linkedin: "https://www.linkedin.com/in/abhaymishrahere/",
+  // WhatsApp chat with the message pre-filled: the quickest way to book a call.
+  callHref:
+    "https://wa.me/917980119941?text=" +
+    encodeURIComponent("Hi Abhay, I'd like to book a call about a video project."),
+  linkedin:"https://www.linkedin.com/in/abhaymishrahere/",
   // Profile photo, cropped to 4:5 from the original shoot.
   photo:
     "/abhay.jpg",
@@ -57,9 +61,9 @@ export const services = [
 
 export const beliefs = [
   {
-    icon: "event_repeat",
-    title: "Systems beat habits",
-    desc: "A habit needs a good week. A system needs you once a month. I bank content ahead so it ships even when things get busy.",
+    icon: "ads_click",
+    title: "One video, one job",
+    desc: "Every video is built around a single action: book a visit, buy, or subscribe. If a scene doesn't help that, it goes.",
   },
   {
     icon: "description",
