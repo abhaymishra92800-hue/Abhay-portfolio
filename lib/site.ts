@@ -18,6 +18,12 @@ export const tools = ["Descript", "DaVinci Resolve", "Remotion", "Claude", "YouT
 
 export const services = [
   {
+    icon: "campaign",
+    title: "Ads & Sales Videos",
+    desc: "Property ads, UGC-style ads, and launch films made to get the viewer to act: book a visit, buy, or sign up. Scripted, designed, and edited end to end.",
+    tools: ["Remotion", "Claude", "DaVinci Resolve"],
+  },
+  {
     icon: "movie_edit",
     title: "Video Editing",
     desc: "Long-form YouTube, podcasts, explainers, and VSLs. Retention-first pacing, captions, motion graphics, and b-roll.",

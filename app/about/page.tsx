@@ -33,9 +33,10 @@ export default function AboutPage() {
           </h1>
           <div className="space-y-4 text-lg text-on-surface-variant leading-relaxed max-w-2xl">
             <p>
-              I&apos;m a freelance video editor and social media manager based in {site.location}. I
-              edit long-form YouTube videos, podcasts, and shorts, and I run YouTube and LinkedIn
-              accounts for creators and founders.
+              I&apos;m a freelance video editor based in {site.location}. I make ads and films that are
+              built to sell: property ads for real estate developers, UGC-style ads for brands, launch
+              films, and explainers. I also edit long-form YouTube and run YouTube and LinkedIn for
+              creators and founders.
             </p>
             <p>
               Most businesses don&apos;t struggle to make content. They struggle to make it
