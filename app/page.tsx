@@ -2,8 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import VideoGrid from "@/components/VideoGrid";
-import IdeaToVideo from "@/components/IdeaToVideo";
-import { longFormVideos, shortFormVideos } from "@/lib/videos";
+import WorkShowcase from "@/components/WorkShowcase";
+import { longFormVideos, shortFormVideos, workCategories } from "@/lib/videos";
 import { site, services } from "@/lib/site";
 
 
@@ -77,24 +77,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── IDEA TO VIDEO ─── */}
-      <section className="py-20 bg-surface-container-low/40 border-b border-outline-variant/30">
+      {/* ─── AD & BRAND WORK ─── */}
+      <section id="work" className="py-20 bg-surface-container-low/40 border-b border-outline-variant/30 scroll-mt-20">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
           <ScrollReveal>
-            <div className="text-center max-w-2xl mx-auto mb-14">
-              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">From idea to video</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-4">You bring the idea. I make the video.</h2>
+            <div className="max-w-2xl mb-14">
+              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Selected work</p>
+              <h2 className="text-3xl md:text-5xl font-extrabold text-on-surface mb-4">Ads and films that sell.</h2>
               <p className="text-on-surface-variant text-base md:text-lg">
-                No footage needed. One line from the client, and I handle the script, design, edit, and sound.
+                Real estate, UGC, cinematic and explainer videos made for real brands. Click any video to play it.
               </p>
             </div>
           </ScrollReveal>
-          <IdeaToVideo />
+          <WorkShowcase categories={workCategories} limit={5} />
+          <div className="mt-14">
+            <Link href="/portfolio" className="text-sm font-bold text-primary inline-flex items-center gap-1 hover:gap-2 transition-all">
+              See all work
+              <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* ─── FEATURED WORK ─── */}
-      <section id="work" className="py-20 scroll-mt-20">
+      {/* ─── LONG-FORM & SHORTS ─── */}
+      <section id="long-form" className="py-20 scroll-mt-20">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
           <ScrollReveal>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">

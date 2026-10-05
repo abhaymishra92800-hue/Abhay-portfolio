@@ -2,7 +2,8 @@ import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
 import VideoGrid from "@/components/VideoGrid";
-import { longFormVideos, shortFormVideos } from "@/lib/videos";
+import WorkShowcase from "@/components/WorkShowcase";
+import { longFormVideos, shortFormVideos, workCategories } from "@/lib/videos";
 
 
 export const metadata: Metadata = {
@@ -36,11 +37,15 @@ export default function PortfolioPage() {
           My <span className="gradient-text">Portfolio</span>
         </h1>
         <p className="text-lg text-on-surface-variant max-w-2xl leading-relaxed">
-          Long-form YouTube edits, podcasts, explainers, shorts, and reels. Click any video to play it here.
+          Real estate ads, UGC, cinematic films, and explainers, plus long-form YouTube edits and shorts. Click any video to play it here.
         </p>
       </section>
 
       <section className="relative z-10">
+        <WorkShowcase categories={workCategories} />
+      </section>
+
+      <section className="relative z-10 mt-24">
         <h2 className="text-2xl md:text-3xl font-bold text-on-surface mb-6">Long-form edits</h2>
         <VideoGrid videos={longFormVideos} />
         <h2 className="text-2xl md:text-3xl font-bold text-on-surface mt-16 mb-6">Shorts &amp; reels</h2>
