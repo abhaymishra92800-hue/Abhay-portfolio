@@ -41,7 +41,7 @@ export default function PortfolioPage() {
           Long-form YouTube, shorts, ads, launch films, and explainers. Tap a video to hear it.
         </p>
         <div className="flex flex-wrap justify-center gap-2 mt-6">
-          {[{ id: "long-form", eyebrow: "YouTube" }, ...workCategories].map((c) => (
+          {[...workCategories, { id: "long-form", eyebrow: "YouTube" }].map((c) => (
             <a
               key={c.id}
               href={`#${c.id}`}
@@ -53,7 +53,11 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <section id="long-form" className="relative z-10 mb-20 scroll-mt-24">
+      <section className="relative z-10">
+        <WorkShowcase categories={workCategories} />
+      </section>
+
+      <section id="long-form" className="relative z-10 mt-20 scroll-mt-24">
         <div className="text-center max-w-2xl mx-auto mb-8">
           <p className="text-xs font-bold text-primary uppercase tracking-widest mb-2">YouTube</p>
           <h2 className="text-2xl md:text-3xl font-bold text-on-surface">Long-form edits</h2>
@@ -64,10 +68,6 @@ export default function PortfolioPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-on-surface">Shorts &amp; reels</h2>
         </div>
         <VideoGrid videos={shortFormVideos} vertical />
-      </section>
-
-      <section className="relative z-10">
-        <WorkShowcase categories={workCategories} />
       </section>
 
       <Testimonials />

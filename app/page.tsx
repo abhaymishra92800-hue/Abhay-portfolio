@@ -130,8 +130,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── AD & BRAND WORK ─── */}
+      <section id="work" className="py-14 md:py-20 border-b border-outline-variant/30 scroll-mt-20">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
+              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Ads &amp; brand films</p>
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-on-surface mb-3 md:mb-4">Ads and films made to get the viewer to act.</h2>
+              <p className="text-on-surface-variant text-base md:text-lg">
+                Property launches, UGC ads, cinematic films, and explainers for real brands. Tap a video to hear it.
+              </p>
+            </div>
+          </ScrollReveal>
+          <WorkShowcase categories={workCategories} initial={6} />
+          <div className="mt-14 text-center">
+            <Link href="/portfolio" className="text-sm font-bold text-primary inline-flex items-center gap-1 hover:gap-2 transition-all">
+              See all work
+              <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ─── LONG-FORM & SHORTS ─── */}
-      <section id="long-form" className="py-14 md:py-20 scroll-mt-20 border-b border-outline-variant/30">
+      <section id="long-form" className="py-14 md:py-20 scroll-mt-20 bg-surface-container-low/40 border-b border-outline-variant/30">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-10">
@@ -153,28 +175,6 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-on-surface">Shorts &amp; reels</h2>
           </div>
           <VideoGrid videos={shortFormVideos} vertical />
-        </div>
-      </section>
-
-      {/* ─── AD & BRAND WORK ─── */}
-      <section id="work" className="py-14 md:py-20 bg-surface-container-low/40 border-b border-outline-variant/30 scroll-mt-20">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
-          <ScrollReveal>
-            <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
-              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Ads &amp; brand films</p>
-              <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-on-surface mb-3 md:mb-4">Ads and films made to get the viewer to act.</h2>
-              <p className="text-on-surface-variant text-base md:text-lg">
-                Property launches, UGC ads, cinematic films, and explainers for real brands. Tap a video to hear it.
-              </p>
-            </div>
-          </ScrollReveal>
-          <WorkShowcase categories={workCategories} initial={6} />
-          <div className="mt-14 text-center">
-            <Link href="/portfolio" className="text-sm font-bold text-primary inline-flex items-center gap-1 hover:gap-2 transition-all">
-              See all work
-              <span className="material-symbols-outlined text-sm">arrow_forward</span>
-            </Link>
-          </div>
         </div>
       </section>
 
