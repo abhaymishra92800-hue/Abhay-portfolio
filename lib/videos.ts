@@ -57,6 +57,9 @@ export type WorkCategory = {
 
 const v = (name: string, lang?: string): WorkVersion => ({ src: `/portfolio/${name}.mp4`, poster: `/portfolio/${name}.jpg`, lang });
 
+const RAT = "Rationale · faceless YouTube channel";
+const FACELESS = "Faceless channel";
+
 export const workCategories: WorkCategory[] = [
   {
     id: "real-estate-ads",
@@ -107,9 +110,21 @@ export const workCategories: WorkCategory[] = [
     title: "Explainers & faceless channels",
     blurb: "Tech explainers and faceless YouTube shorts: sharp scripts, motion graphics, and captions that hold attention without a person on camera.",
     items: [
-      { title: "Claude Code Plugin", client: "Tech explainer", versions: [{ src: "/showcase/jev.mp4", poster: "/showcase/jev.jpg" }] },
-      { title: "Why is milk at the back of the store?", client: "KnowLayer · faceless channel", versions: [v("knowlayer-milk")], tag: "Faceless channel" },
-      { title: "Why does a phone cost $899?", client: "KnowLayer · faceless channel", versions: [v("knowlayer-phone")], tag: "Faceless channel" },
+      { title: "Claude Code forgets everything (free fix)", client: RAT, versions: [v("rat-claude-memory")], tag: FACELESS },
+      { title: "Meta Muse, the AI that spends your money", client: RAT, versions: [v("rat-meta-muse")], tag: FACELESS },
+      { title: "1,200 AI agents built a cheating ring", client: RAT, versions: [v("rat-cheating-ring")], tag: FACELESS },
+      { title: "Nvidia's agent jail", client: RAT, versions: [v("rat-nvidia-jail")], tag: FACELESS },
+      { title: "Claude Tag: an AI employee in Slack", client: RAT, versions: [v("rat-claude-tag")], tag: FACELESS },
+      { title: "Your AI can soon pay on UPI", client: RAT, versions: [v("rat-upi")], tag: FACELESS },
+      { title: "GPT-6 Astra", client: RAT, versions: [v("rat-gpt6")], tag: FACELESS },
+      { title: "OpenAI vs Meta: the agent war", client: RAT, versions: [v("rat-agent-war")], tag: FACELESS },
+      { title: "OpenAI's dots read your apps", client: RAT, versions: [v("rat-openai-dots")], tag: FACELESS },
+      { title: "3 free plugins for your Claude Code limit", client: RAT, versions: [v("rat-claude-plugins")], tag: FACELESS },
+      { title: "Claude Code stops itself deleting files", client: RAT, versions: [v("rat-claude-files")], tag: FACELESS },
+      { title: "Muse this week: #1 app and the privacy mess", client: RAT, versions: [v("rat-muse-week")], tag: FACELESS },
+      { title: "Claude Code plugin", client: "Tech explainer", versions: [{ src: "/showcase/jev.mp4", poster: "/showcase/jev.jpg" }] },
+      { title: "Why is milk at the back of the store?", client: "KnowLayer · faceless channel", versions: [v("knowlayer-milk")], tag: FACELESS },
+      { title: "Why does a phone cost $899?", client: "KnowLayer · faceless channel", versions: [v("knowlayer-phone")], tag: FACELESS },
     ],
   },
 ];

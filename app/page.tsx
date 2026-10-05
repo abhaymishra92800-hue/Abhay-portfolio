@@ -1,22 +1,34 @@
 import Link from "next/link";
+import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
-import VideoGrid from "@/components/VideoGrid";
 import WorkShowcase from "@/components/WorkShowcase";
 import AutoVideo from "@/components/AutoVideo";
-import { longFormVideos, shortFormVideos, workCategories } from "@/lib/videos";
+import { workCategories } from "@/lib/videos";
 import { site, services } from "@/lib/site";
 
-
-const heroReels = [
-  { src: "/portfolio/srijan-orizon.mp4", poster: "/portfolio/srijan-orizon.jpg", title: "Real estate ad" },
-  { src: "/portfolio/woodsmen.mp4", poster: "/portfolio/woodsmen.jpg", title: "UGC ad" },
-  { src: "/portfolio/orbit-tarang.mp4", poster: "/portfolio/orbit-tarang.jpg", title: "Property launch" },
-];
+// Hero numbers come straight from the portfolio data, so they stay true as work is added.
+const allWork = workCategories.flatMap((c) => c.items);
+const projectCount = Math.floor(allWork.length / 5) * 5;
+const realEstateCount = workCategories.find((c) => c.id === "real-estate-ads")?.items.length ?? 0;
+const languageCount = new Set(allWork.flatMap((w) => w.versions.map((v) => v.lang).filter(Boolean))).size;
 
 const stats = [
-  { value: "400+", label: "Videos edited" },
-  { value: "1M+", label: "Audience reach" },
-  { value: "30%", label: "Audience retention" },
+  { value: `${projectCount}+`, label: "Ad & film projects" },
+  { value: `${realEstateCount}`, label: "Real estate projects" },
+  { value: `${languageCount}`, label: "Languages" },
+];
+
+// Reels that sit behind the profile photo in the hero.
+const heroReels = {
+  left: { src: "/portfolio/woodsmen.mp4", poster: "/portfolio/woodsmen.jpg", title: "UGC ad" },
+  center: { src: "/portfolio/srijan-orizon.mp4", poster: "/portfolio/srijan-orizon.jpg", title: "Real estate ad" },
+  right: { src: "/portfolio/dogshood.mp4", poster: "/portfolio/dogshood.jpg", title: "UGC ad" },
+};
+
+const steps = [
+  { icon: "chat", title: "Share the idea", desc: "Send a one-line idea, your footage, or a project link. A short brief fixes the goal before I start." },
+  { icon: "edit_square", title: "I script, design, and edit", desc: "Hook, story, motion graphics, captions, and sound, built around the action you want viewers to take." },
+  { icon: "rocket_launch", title: "Post it, with revisions", desc: "You get a video ready for ads or social, and I adjust it until it works for you." },
 ];
 
 export default function Home() {
@@ -27,10 +39,11 @@ export default function Home() {
 
       {/* ─── HERO ─── */}
       <section className="relative bg-gradient-to-br from-orange-50 via-purple-100 to-purple-300 pt-24 lg:pt-28 pb-14 border-b border-outline-variant/30">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-16 flex flex-col-reverse lg:flex-row items-center gap-12">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center gap-12">
           <div className="w-full lg:w-1/2">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-on-surface leading-[1.1] tracking-tight mb-5">
-              Videos that turn viewers into <span className="gradient-text">customers.</span>
+            <h1 className="font-extrabold text-on-surface leading-[1.12] tracking-tight mb-5 text-[clamp(1.6rem,7.2vw,2.6rem)] lg:text-[clamp(1.9rem,3.4vw,3.4rem)]">
+              <span className="block whitespace-nowrap">Videos that turn viewers</span>
+              <span className="block whitespace-nowrap gradient-text">into customers.</span>
             </h1>
             <p className="text-lg md:text-xl text-on-surface-variant mb-8 max-w-xl leading-relaxed">
               I&apos;m Abhay. I make ads, launch films, and explainers built to convert: site visits for
@@ -39,41 +52,63 @@ export default function Home() {
 
             <div className="flex flex-wrap items-center gap-4 mb-10">
               <a
-                href="#work"
+                href={site.callHref}
+                target="_blank"
+                rel="noreferrer"
                 className="bg-primary hover:bg-primary-container text-white font-semibold py-3.5 px-8 rounded-full transition-all duration-300 shadow-lg shadow-indigo-500/25 hover:scale-105 active:scale-95 flex items-center gap-2"
               >
-                <span className="material-symbols-outlined text-lg" aria-hidden="true">play_circle</span>
-                View my work
+                <span className="material-symbols-outlined text-lg" aria-hidden="true">call</span>
+                Book a call
               </a>
-              <Link
-                href="/contact"
+              <a
+                href="#work"
                 className="bg-white/80 hover:bg-white border border-outline-variant/60 text-on-surface font-semibold py-3.5 px-8 rounded-full transition-all duration-300 shadow-sm hover:scale-105 flex items-center gap-2"
               >
-                Hire me
-                <span className="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
-              </Link>
+                <span className="material-symbols-outlined text-lg" aria-hidden="true">play_circle</span>
+                See the work
+              </a>
             </div>
 
-            <div className="flex flex-wrap gap-x-10 gap-y-6">
+            <div className="flex flex-wrap gap-x-8 gap-y-6">
               {stats.map((s) => (
                 <div key={s.label}>
                   <p className="text-4xl md:text-5xl font-extrabold text-on-surface leading-none mb-2">{s.value}</p>
-                  <p className="text-xs md:text-sm text-on-surface-variant uppercase tracking-wider whitespace-nowrap">{s.label}</p>
+                  <p className="text-xs md:text-sm text-on-surface-variant uppercase tracking-wider">{s.label}</p>
                 </div>
               ))}
             </div>
           </div>
 
+          {/* Photo in front, real ad work playing softly behind */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-            <div className="flex items-center justify-center gap-3 sm:gap-4 w-full max-w-md lg:max-w-lg">
-              {heroReels.map((r, i) => (
-                <div
-                  key={r.src}
-                  className={`flex-1 rounded-[1.6rem] p-1.5 bg-on-surface shadow-2xl ${i === 1 ? "-translate-y-6" : i === 2 ? "translate-y-4" : ""}`}
-                >
-                  <AutoVideo src={r.src} poster={r.poster} title={r.title} className="aspect-[9/16] rounded-[1.25rem]" />
-                </div>
-              ))}
+            <div className="relative w-full max-w-[420px] sm:max-w-md lg:max-w-[460px] aspect-[5/6]">
+              <div className="absolute left-[33%] top-0 w-[34%] opacity-60 z-0">
+                <AutoVideo quiet {...heroReels.center} className="aspect-[9/16] rounded-2xl ring-1 ring-white/70" />
+              </div>
+              <div className="absolute left-0 top-[6%] w-[37%] -rotate-6 opacity-75 z-0">
+                <AutoVideo quiet {...heroReels.left} className="aspect-[9/16] rounded-2xl ring-1 ring-white/70 shadow-xl" />
+              </div>
+              <div className="absolute right-0 top-[2%] w-[37%] rotate-6 opacity-75 z-0">
+                <AutoVideo quiet {...heroReels.right} className="aspect-[9/16] rounded-2xl ring-1 ring-white/70 shadow-xl" />
+              </div>
+
+              <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[60%] aspect-[4/5] rounded-3xl overflow-hidden border-2 border-white/80 shadow-2xl z-10 bg-gradient-to-tr from-indigo-100 via-purple-50 to-pink-50">
+                <Image
+                  src={site.photo}
+                  alt={site.name}
+                  fill
+                  sizes="(max-width: 1024px) 60vw, 280px"
+                  className="object-cover object-top"
+                  priority
+                />
+              </div>
+
+              <span className="absolute left-[2%] bottom-[14%] z-20 text-xs font-bold text-on-surface bg-white/90 backdrop-blur px-3 py-1.5 rounded-full shadow-lg">
+                Property ads
+              </span>
+              <span className="absolute right-[2%] bottom-[28%] z-20 text-xs font-bold text-on-surface bg-white/90 backdrop-blur px-3 py-1.5 rounded-full shadow-lg">
+                UGC ads
+              </span>
             </div>
           </div>
         </div>
@@ -83,7 +118,7 @@ export default function Home() {
       <section id="work" className="py-20 bg-surface-container-low/40 border-b border-outline-variant/30 scroll-mt-20">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
           <ScrollReveal>
-            <div className="max-w-2xl mb-14">
+            <div className="max-w-3xl mx-auto text-center mb-14">
               <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Work that converts</p>
               <h2 className="text-3xl md:text-5xl font-extrabold text-on-surface mb-4">Every video has one job: get the viewer to act.</h2>
               <p className="text-on-surface-variant text-base md:text-lg">
@@ -92,7 +127,7 @@ export default function Home() {
             </div>
           </ScrollReveal>
           <WorkShowcase categories={workCategories} initial={5} />
-          <div className="mt-14">
+          <div className="mt-14 text-center">
             <Link href="/portfolio" className="text-sm font-bold text-primary inline-flex items-center gap-1 hover:gap-2 transition-all">
               See all work
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -101,32 +136,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── LONG-FORM & SHORTS ─── */}
-      <section id="long-form" className="py-20 scroll-mt-20">
+      {/* ─── HOW IT WORKS ─── */}
+      <section className="py-20 border-b border-outline-variant/30">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
           <ScrollReveal>
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
-              <div>
-                <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Portfolio</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-on-surface">Long-form edits</h2>
-                <p className="text-on-surface-variant mt-2">YouTube episodes, podcasts, and explainers. Click to play.</p>
-              </div>
-              <Link
-                href="/portfolio"
-                className="text-sm font-bold text-primary inline-flex items-center gap-1 hover:gap-2 transition-all"
-              >
-                See all {longFormVideos.length} videos
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </Link>
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">How it works</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-on-surface">From idea to a video that&apos;s ready to run</h2>
             </div>
           </ScrollReveal>
-          <VideoGrid videos={longFormVideos.slice(0, 6)} />
-
-          <div className="mt-20 mb-10">
-            <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Short-form</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-on-surface">Shorts & reels</h2>
-          </div>
-          <VideoGrid videos={shortFormVideos} vertical />
+          <ScrollReveal stagger>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {steps.map((s, i) => (
+                <div key={s.title} className="reveal glass-card rounded-3xl p-7 text-center border border-outline-variant/40 bg-surface-container-lowest">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
+                    <span className="material-symbols-outlined text-2xl">{s.icon}</span>
+                  </div>
+                  <p className="text-xs font-bold text-primary uppercase tracking-widest mb-1">Step {i + 1}</p>
+                  <h3 className="text-lg font-bold text-on-surface mb-2">{s.title}</h3>
+                  <p className="text-sm text-on-surface-variant leading-relaxed">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -140,19 +172,19 @@ export default function Home() {
             </div>
           </ScrollReveal>
           <ScrollReveal stagger>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="flex flex-wrap justify-center gap-6">
               {services.map((s) => (
                 <Link
                   key={s.title}
                   href="/services"
-                  className="reveal group block glass-card rounded-3xl p-7 border border-outline-variant/40 hover:border-primary hover:-translate-y-1 hover:shadow-xl transition-all bg-surface-container-lowest"
+                  className="reveal group block glass-card rounded-3xl p-7 text-center border border-outline-variant/40 hover:border-primary hover:-translate-y-1 hover:shadow-xl transition-all bg-surface-container-lowest w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
                     <span className="material-symbols-outlined text-2xl">{s.icon}</span>
                   </div>
                   <h3 className="text-lg font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
                   <p className="text-sm text-on-surface-variant leading-relaxed mb-4">{s.desc}</p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap justify-center gap-2">
                     {s.tools.map((t) => (
                       <span key={t} className="text-[11px] font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-full">
                         {t}
@@ -170,25 +202,26 @@ export default function Home() {
       <ScrollReveal>
         <section className="py-16 px-6 lg:px-16 max-w-[1400px] mx-auto">
           <div className="rounded-3xl p-10 md:p-16 text-center bg-gradient-to-br from-indigo-600 to-purple-700 shadow-2xl">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">Have a video to edit?</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">Let&apos;s make a video that sells.</h2>
             <p className="text-white/80 text-base md:text-lg mb-8 max-w-xl mx-auto">
-              Send me your footage or your channel link and I&apos;ll get back to you within 24 hours.
+              Tell me what you&apos;re promoting. I&apos;ll reply within 24 hours with how I&apos;d approach it.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/contact"
-                className="bg-white text-primary font-bold px-8 py-3.5 rounded-full shadow-md hover:scale-105 transition-all"
-              >
-                Get in touch
-              </Link>
               <a
-                href={site.whatsapp}
+                href={site.callHref}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3.5 rounded-full shadow-md hover:scale-105 transition-all"
+                className="bg-white text-primary font-bold px-8 py-3.5 rounded-full shadow-md hover:scale-105 transition-all inline-flex items-center gap-2"
               >
-                WhatsApp {site.phone}
+                <span className="material-symbols-outlined text-lg" aria-hidden="true">call</span>
+                Book a call
               </a>
+              <Link
+                href="/contact"
+                className="bg-white/15 hover:bg-white/25 border border-white/40 text-white font-bold px-8 py-3.5 rounded-full hover:scale-105 transition-all"
+              >
+                Send a message
+              </Link>
             </div>
             <a href={`mailto:${site.email}`} className="inline-block mt-6 text-white/80 hover:text-white text-sm font-semibold">
               {site.email}

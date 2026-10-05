@@ -8,12 +8,13 @@ type Props = {
   title: string;
   className?: string;
   badge?: string;
+  quiet?: boolean; // background use: no sound button
 };
 
 // Muted looping preview. The file loads when the card nears the screen, plays
 // while it is mostly visible, and pauses when scrolled away. Tap to hear it.
 // Visitors who prefer reduced motion get the poster and a play button instead.
-export default function AutoVideo({ src, poster, title, className = "", badge }: Props) {
+export default function AutoVideo({ src, poster, title, className = "", badge, quiet = false }: Props) {
   const wrap = useRef<HTMLDivElement>(null);
   const video = useRef<HTMLVideoElement>(null);
   const [near, setNear] = useState(false);
@@ -82,7 +83,7 @@ export default function AutoVideo({ src, poster, title, className = "", badge }:
             play_circle
           </span>
         </button>
-      ) : (
+      ) : quiet ? null : (
         <button
           type="button"
           onClick={() => setMuted((m) => !m)}
