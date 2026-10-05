@@ -7,10 +7,10 @@ import CookieConsent from "@/components/CookieConsent";
 export const metadata: Metadata = {
   metadataBase: new URL("https://abhay-editing-portfolio-website.vercel.app"),
   title: {
-    default: "Abhay Mishra | Video Editor for Ads, Launch Films & Explainers",
+    default: "Abhay Mishra | Video Editor & Social Media Manager",
     template: "%s | Abhay Mishra",
   },
-  description: "Abhay Mishra makes ads, launch films, and explainers built to convert: real estate property ads, UGC ads, cinematic project films, and faceless YouTube content.",
+  description: "Abhay Mishra is a video editor and social media manager: long-form YouTube edits, shorts and reels, property and UGC ads, launch films, and YouTube and LinkedIn management.",
   keywords: ["Abhay Mishra", "Video Editing", "Social Media Management", "YouTube Management", "LinkedIn Management", "Content Automation", "Descript", "DaVinci Resolve", "Remotion"],
   authors: [{ name: "Abhay Mishra" }],
   creator: "Abhay Mishra",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "Abhay Mishra",
     locale: "en_US",
     title: "Abhay Mishra | Portfolio",
-    description: "Videos built to bring in leads, sales, and subscribers: property ads, UGC ads, launch films, and explainers.",
+    description: "Video editing and social media management: long-form YouTube, shorts, ads, launch films, and explainers.",
     url: "https://abhay-editing-portfolio-website.vercel.app",
     images: [
       {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Abhay Mishra | Portfolio",
-    description: "Videos built to bring in leads, sales, and subscribers: property ads, UGC ads, launch films, and explainers.",
+    description: "Video editing and social media management: long-form YouTube, shorts, ads, launch films, and explainers.",
     images: ["/api/og"],
   },
   icons: {
