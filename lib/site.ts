@@ -22,12 +22,6 @@ export const tools = ["Descript", "DaVinci Resolve", "Remotion", "Claude", "YouT
 
 export const services = [
   {
-    icon: "campaign",
-    title: "Ads & Sales Videos",
-    desc: "Property ads, UGC-style ads, and launch films made to get the viewer to act: book a visit, buy, or sign up. Scripted, designed, and edited end to end.",
-    tools: ["Remotion", "Claude", "DaVinci Resolve"],
-  },
-  {
     icon: "movie_edit",
     title: "Video Editing",
     desc: "Long-form YouTube, podcasts, explainers, and VSLs. Retention-first pacing, captions, motion graphics, and b-roll.",
@@ -38,6 +32,12 @@ export const services = [
     title: "Shorts & Reels",
     desc: "Hook-first vertical cuts for YouTube Shorts, Instagram, and LinkedIn, repurposed from your long-form content.",
     tools: ["Descript", "Claude"],
+  },
+  {
+    icon: "campaign",
+    title: "Ads & Sales Videos",
+    desc: "Property ads, UGC-style ads, and launch films made to get the viewer to act: book a visit, buy, or sign up. Scripted, designed, and edited end to end.",
+    tools: ["Remotion", "Claude", "DaVinci Resolve"],
   },
   {
     icon: "subscriptions",
@@ -79,7 +79,7 @@ export const beliefs = [
 
 // Headline numbers, shared by the home and About pages.
 export const credibilityStats = [
-  { value: "777", label: "Videos edited" },
+  { value: "777+", label: "Videos edited" },
   { value: "1M+", label: "Audience reach" },
   { value: "30%", label: "Audience retention" },
 ];

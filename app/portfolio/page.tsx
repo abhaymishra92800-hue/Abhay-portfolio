@@ -9,18 +9,18 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Portfolio | Abhay Mishra",
-  description: "Property ads, UGC ads, cinematic launch films, and faceless-channel explainers built to bring in leads and sales.",
+  description: "Long-form YouTube edits, shorts and reels, property and UGC ads, launch films, and faceless-channel explainers.",
   alternates: { canonical: "/portfolio" },
   openGraph: {
     title: "Portfolio | Abhay Mishra",
-    description: "Ads and films built to convert.",
+    description: "Long-form, shorts, ads, and films.",
     url: "https://abhay-editing-portfolio-website.vercel.app/portfolio",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Portfolio | Abhay Mishra",
-    description: "Ads and films built to convert.",
+    description: "Long-form, shorts, ads, and films.",
   },
 };
 
@@ -35,13 +35,13 @@ export default function PortfolioPage() {
           Selected work
         </div>
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-on-surface mb-4 leading-tight">
-          Videos built to <span className="gradient-text">convert</span>
+          Work that <span className="gradient-text">grows</span> channels and brands
         </h1>
         <p className="text-lg text-on-surface-variant leading-relaxed">
-          Property ads, UGC ads, launch films, explainers, and YouTube edits. Tap a video to hear it.
+          Long-form YouTube, shorts, ads, launch films, and explainers. Tap a video to hear it.
         </p>
         <div className="flex flex-wrap justify-center gap-2 mt-6">
-          {[...workCategories, { id: "long-form", eyebrow: "YouTube" }].map((c) => (
+          {[{ id: "long-form", eyebrow: "YouTube" }, ...workCategories].map((c) => (
             <a
               key={c.id}
               href={`#${c.id}`}
@@ -53,11 +53,7 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <section className="relative z-10">
-        <WorkShowcase categories={workCategories} />
-      </section>
-
-      <section id="long-form" className="relative z-10 mt-20 scroll-mt-24">
+      <section id="long-form" className="relative z-10 mb-20 scroll-mt-24">
         <div className="text-center max-w-2xl mx-auto mb-8">
           <p className="text-xs font-bold text-primary uppercase tracking-widest mb-2">YouTube</p>
           <h2 className="text-2xl md:text-3xl font-bold text-on-surface">Long-form edits</h2>
@@ -68,6 +64,10 @@ export default function PortfolioPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-on-surface">Shorts &amp; reels</h2>
         </div>
         <VideoGrid videos={shortFormVideos} vertical />
+      </section>
+
+      <section className="relative z-10">
+        <WorkShowcase categories={workCategories} />
       </section>
 
       <Testimonials />

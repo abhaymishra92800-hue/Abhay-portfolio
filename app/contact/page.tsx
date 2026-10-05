@@ -9,7 +9,7 @@ const channels = [
   { icon: "person", label: "LinkedIn", value: "abhaymishrahere", href: site.linkedin },
 ];
 
-const topics = ["Video editing", "Shorts & reels", "YouTube management", "LinkedIn management", "Content automation", "Something else"];
+const topics = ["Video editing", "Shorts & reels", "Ads & launch films", "YouTube management", "LinkedIn management", "Content automation", "Something else"];
 
 export default function ContactPage() {
   const [name, setName] = useState("");

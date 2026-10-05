@@ -4,29 +4,27 @@ import type { Metadata } from "next";
 import ScrollReveal from "@/components/ScrollReveal";
 import Testimonials from "@/components/Testimonials";
 import { site, beliefs, credibilityStats } from "@/lib/site";
-import { workCategories, longFormVideos } from "@/lib/videos";
+import { workCategories, longFormVideos, shortFormVideos } from "@/lib/videos";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Abhay Mishra is a freelance video editor from West Bengal, India. He makes property ads, UGC ads, launch films, and explainers built to convert.",
+    "Abhay Mishra is a freelance video editor and social media manager from West Bengal, India: long-form YouTube, shorts, ads, launch films, and YouTube and LinkedIn management.",
   alternates: { canonical: "/about" },
 };
 
-const makes = [
-  { id: "real-estate-ads", icon: "apartment", title: "Property ads", desc: "Motion-graphic ads for real estate developers, in English and Bengali." },
-  { id: "ugc-ads", icon: "smartphone", title: "UGC ads", desc: "Creator-style ads that feel native on Instagram and Reels." },
-  { id: "location-films", icon: "movie", title: "Launch films", desc: "Cinematic project films with satellite zoom-ins and 4K footage." },
-  { id: "explainers", icon: "lightbulb", title: "Explainers", desc: "Tech explainers and faceless YouTube channel shorts." },
-].map((m) => ({ ...m, count: workCategories.find((c) => c.id === m.id)?.items.length ?? 0 }));
+function count(id: string) {
+  return workCategories.find((c) => c.id === id)?.items.length ?? 0;
+}
 
-makes.push({
-  id: "long-form",
-  icon: "smart_display",
-  title: "YouTube edits",
-  desc: "Long-form episodes, podcasts, and shorts with retention-first pacing.",
-  count: longFormVideos.length,
-});
+const makes = [
+  { id: "long-form", href: "/portfolio#long-form", icon: "smart_display", title: "Long-form YouTube", desc: "Episodes, podcasts, and explainers with retention-first pacing.", count: `${longFormVideos.length} videos` },
+  { id: "shorts", href: "/portfolio#long-form", icon: "vertical_split", title: "Shorts & reels", desc: "Hook-first vertical cuts for YouTube, Instagram, and LinkedIn.", count: `${shortFormVideos.length} videos` },
+  { id: "real-estate-ads", href: "/portfolio#real-estate-ads", icon: "apartment", title: "Property & UGC ads", desc: "Ads for developers and brands, in English and Bengali.", count: `${count("real-estate-ads") + count("ugc-ads")} projects` },
+  { id: "location-films", href: "/portfolio#location-films", icon: "movie", title: "Launch films", desc: "Cinematic project films with satellite zoom-ins and 4K footage.", count: `${count("location-films")} projects` },
+  { id: "explainers", href: "/portfolio#explainers", icon: "lightbulb", title: "Explainers", desc: "Tech explainers and faceless YouTube channel shorts.", count: `${count("explainers")} videos` },
+  { id: "social", href: "/services", icon: "share", title: "Social media management", desc: "YouTube and LinkedIn: uploads, thumbnails, SEO, posting, and engagement.", count: "Ongoing" },
+];
 
 export default function AboutPage() {
   return (
@@ -43,13 +41,14 @@ export default function AboutPage() {
           </h1>
           <div className="space-y-4 text-lg text-on-surface-variant leading-relaxed">
             <p>
-              I&apos;m a freelance video editor based in {site.location}. I make ads and films that are
-              built to sell: property ads for real estate developers, UGC-style ads for brands, launch
-              films, and explainers, plus long-form YouTube edits and shorts.
+              I&apos;m a freelance video editor and social media manager based in {site.location}. I edit
+              long-form YouTube videos, podcasts, and shorts, make ads and launch films for brands, and run
+              YouTube and LinkedIn for creators and founders.
             </p>
             <p>
-              Every video starts with one question: what should the viewer do next? Book a visit, buy,
-              or subscribe. Then I script, design, and edit the video around that action.
+              Most businesses don&apos;t struggle to make content. They struggle to make it consistently. So
+              alongside the editing, I build the systems behind it, and every video starts with one question:
+              what should the viewer do next?
             </p>
           </div>
           <div className="flex flex-wrap justify-center lg:justify-start gap-4 mt-8">
@@ -91,22 +90,22 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What I make */}
+      {/* What I do */}
       <section className="py-12 relative z-10">
         <ScrollReveal>
-          <h2 className="text-2xl md:text-4xl font-bold text-on-surface mb-8 md:mb-10 text-center">What I make</h2>
+          <h2 className="text-2xl md:text-4xl font-bold text-on-surface mb-8 md:mb-10 text-center">What I do</h2>
         </ScrollReveal>
         <ScrollReveal stagger>
           <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
             {makes.map((m) => (
               <Link
                 key={m.id}
-                href={`/portfolio#${m.id}`}
-                className="reveal group glass-card rounded-3xl p-7 text-center border border-outline-variant/40 hover:border-primary hover:-translate-y-1 hover:shadow-xl transition-all w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(20%-1.2rem)]"
+                href={m.href}
+                className="reveal group glass-card rounded-3xl p-7 text-center border border-outline-variant/40 hover:border-primary hover:-translate-y-1 hover:shadow-xl transition-all w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
               >
                 <span className="material-symbols-outlined text-primary text-3xl mb-3 block">{m.icon}</span>
                 <h3 className="text-lg font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">{m.title}</h3>
-                <p className="text-xs font-bold text-primary mb-2">{m.count} projects</p>
+                <p className="text-xs font-bold text-primary mb-2">{m.count}</p>
                 <p className="text-sm text-on-surface-variant leading-relaxed">{m.desc}</p>
               </Link>
             ))}

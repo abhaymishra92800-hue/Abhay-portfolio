@@ -37,16 +37,16 @@ export default function Home() {
       <section className="relative bg-gradient-to-br from-orange-50 via-purple-100 to-purple-300 pt-24 lg:pt-28 pb-14 border-b border-outline-variant/30">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center gap-12">
           <div className="w-full lg:w-1/2">
-            <h1 className="font-extrabold text-on-surface leading-[1.12] tracking-tight mb-5 text-[clamp(1.6rem,7.2vw,2.6rem)] lg:text-[clamp(1.9rem,3.4vw,3.4rem)]">
-              <span className="block whitespace-nowrap">Videos that turn viewers</span>
-              <span className="block whitespace-nowrap gradient-text">into customers.</span>
+            <h1 className="font-extrabold text-on-surface leading-[1.12] tracking-tight mb-5 text-[clamp(1.5rem,6.6vw,2.6rem)] lg:text-[clamp(1.8rem,3.2vw,3.3rem)]">
+              <span className="block whitespace-nowrap">Videos and content that</span>
+              <span className="block whitespace-nowrap gradient-text">grow your business.</span>
             </h1>
             <p className="text-base md:text-xl text-on-surface-variant mb-6 md:mb-8 max-w-xl leading-relaxed">
-              I&apos;m Abhay. I make ads, launch films, and explainers built to convert: site visits for
-              real estate, sales for brands, and subscribers for creators.
+              I&apos;m Abhay, a video editor and social media manager. Long-form YouTube, shorts and reels,
+              ads and launch films, plus YouTube and LinkedIn management for creators, founders, and brands.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-8 md:mb-10">
+            <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-6">
               <a
                 href={site.callHref}
                 target="_blank"
@@ -63,6 +63,14 @@ export default function Home() {
                 <span className="material-symbols-outlined text-lg" aria-hidden="true">play_circle</span>
                 See the work
               </a>
+            </div>
+
+            <div className="flex flex-wrap gap-2 mb-8">
+              {["Long-form YouTube", "Shorts & reels", "Ads & launch films", "Social media"].map((t) => (
+                <span key={t} className="text-[11px] md:text-xs font-semibold text-primary bg-white/70 border border-primary/20 px-3 py-1 rounded-full">
+                  {t}
+                </span>
+              ))}
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-5 max-w-xl">
@@ -100,40 +108,18 @@ export default function Home() {
               </div>
 
               <span className="absolute left-[2%] bottom-[14%] z-20 text-xs font-bold text-on-surface bg-white/90 backdrop-blur px-3 py-1.5 rounded-full shadow-lg">
-                Property ads
+                Long-form &amp; shorts
               </span>
               <span className="absolute right-[2%] bottom-[28%] z-20 text-xs font-bold text-on-surface bg-white/90 backdrop-blur px-3 py-1.5 rounded-full shadow-lg">
-                UGC ads
+                Ads &amp; social
               </span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── AD & BRAND WORK ─── */}
-      <section id="work" className="py-14 md:py-20 bg-surface-container-low/40 border-b border-outline-variant/30 scroll-mt-20">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
-          <ScrollReveal>
-            <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
-              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Work that converts</p>
-              <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-on-surface mb-3 md:mb-4">Every video has one job: get the viewer to act.</h2>
-              <p className="text-on-surface-variant text-base md:text-lg">
-                Property launches, UGC ads, cinematic films, and explainers made for real brands. Tap a video to hear it.
-              </p>
-            </div>
-          </ScrollReveal>
-          <WorkShowcase categories={workCategories} initial={6} />
-          <div className="mt-14 text-center">
-            <Link href="/portfolio" className="text-sm font-bold text-primary inline-flex items-center gap-1 hover:gap-2 transition-all">
-              See all work
-              <span className="material-symbols-outlined text-sm">arrow_forward</span>
-            </Link>
           </div>
         </div>
       </section>
 
       {/* ─── LONG-FORM & SHORTS ─── */}
-      <section id="long-form" className="py-14 md:py-20 scroll-mt-20">
+      <section id="long-form" className="py-14 md:py-20 scroll-mt-20 border-b border-outline-variant/30">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-10">
@@ -158,7 +144,27 @@ export default function Home() {
         </div>
       </section>
 
-      <Testimonials />
+      {/* ─── AD & BRAND WORK ─── */}
+      <section id="work" className="py-14 md:py-20 bg-surface-container-low/40 border-b border-outline-variant/30 scroll-mt-20">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
+              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Ads &amp; brand films</p>
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-on-surface mb-3 md:mb-4">Ads and films made to get the viewer to act.</h2>
+              <p className="text-on-surface-variant text-base md:text-lg">
+                Property launches, UGC ads, cinematic films, and explainers for real brands. Tap a video to hear it.
+              </p>
+            </div>
+          </ScrollReveal>
+          <WorkShowcase categories={workCategories} initial={6} />
+          <div className="mt-14 text-center">
+            <Link href="/portfolio" className="text-sm font-bold text-primary inline-flex items-center gap-1 hover:gap-2 transition-all">
+              See all work
+              <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* ─── HOW IT WORKS ─── */}
       <section className="py-14 md:py-20 border-b border-outline-variant/30">
@@ -186,13 +192,15 @@ export default function Home() {
         </div>
       </section>
 
+      <Testimonials />
+
       {/* ─── SERVICES ─── */}
-      <section className="py-14 md:py-20 bg-surface-container-low/40">
+      <section className="py-14 md:py-20">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-12">
               <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">What I do</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-on-surface">Editing, social, and automation</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-on-surface">Editing, social media, and automation</h2>
             </div>
           </ScrollReveal>
           <ScrollReveal stagger>
