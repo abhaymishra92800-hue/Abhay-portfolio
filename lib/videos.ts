@@ -33,23 +33,82 @@ export const shortFormVideos: Video[] = [
 
 export const instagramReels: string[] = ["DBZTDRAxzGw", "DC40WUQRFQx", "DDfMjVppsJB"];
 
-// Videos built from a one-line idea: scripted, designed and edited end to end.
-// Files live in /public/showcase (web-compressed 720p copies of the masters).
-export type ShowcaseVideo = { src: string; poster: string; title: string; client: string; idea: string };
 
-export const showcaseVideos: ShowcaseVideo[] = [
+// Brand and ad work, grouped by category. Files live in /public/portfolio and /public/showcase
+// (web-compressed copies of the masters). Add an entry to a category and it appears on the site.
+export type Work = {
+  src: string;
+  poster: string;
+  title: string;
+  client: string;
+  lang?: string;
+  landscape?: boolean;
+};
+
+export type WorkCategory = {
+  id: string;
+  eyebrow: string;
+  title: string;
+  blurb: string;
+  items: Work[];
+};
+
+const p = (name: string) => ({ src: `/portfolio/${name}.mp4`, poster: `/portfolio/${name}.jpg` });
+
+export const workCategories: WorkCategory[] = [
   {
-    src: "/showcase/merlin.mp4",
-    poster: "/showcase/merlin.jpg",
-    title: "Real estate ad · 72s",
-    client: "Merlin Group, Kolkata",
-    idea: "Make an ad that shows off our ongoing projects and gets people to book a site visit.",
+    id: "real-estate-ads",
+    eyebrow: "Real estate",
+    title: "Property explainer ads",
+    blurb: "Motion-graphic ads for developers across Kolkata. Clean layouts, local-language voiceovers, built to drive site visits.",
+    items: [
+      { ...p("srijan-orizon"), title: "Srijan Orizon", client: "Srijan Realty", lang: "EN" },
+      { ...p("eshaana-en"), title: "Eshaana", client: "Eshaana", lang: "EN" },
+      { ...p("eshaana-bn"), title: "Eshaana", client: "Eshaana", lang: "বাংলা" },
+      { ...p("orbit-tarang"), title: "Orbit Tarang", client: "Orbit Group", lang: "EN" },
+      { ...p("orbit-dakshini"), title: "Orbit Dakshini", client: "Orbit Group", lang: "বাংলা" },
+      { ...p("rameswara-en"), title: "Rameswara Riverview", client: "Rameswara", lang: "EN" },
+      { ...p("rameswara-bn"), title: "Rameswara Riverview", client: "Rameswara", lang: "বাংলা" },
+      { ...p("mirania-evara"), title: "Mirania Evara", client: "Mirania", lang: "EN" },
+      { ...p("srijan-optima"), title: "Srijan Optima", client: "Srijan Realty", lang: "EN" },
+      { ...p("srijan-all"), title: "Srijan Portfolio", client: "Srijan Realty", lang: "EN" },
+      { ...p("srijan-ps-group"), title: "Srijan · PS Group", client: "Srijan Realty", lang: "EN" },
+      { ...p("orbit-portfolio"), title: "Orbit Portfolio", client: "Orbit Group", lang: "EN" },
+      { ...p("porshi-nagar"), title: "Porshi Nagar", client: "Porshi Nagar", lang: "EN" },
+      { ...p("nk-brand"), title: "NK Brand Film", client: "NK", lang: "EN" },
+      { ...p("nk-godrej-blue"), title: "Godrej Blue", client: "NK", lang: "EN" },
+      { src: "/showcase/merlin.mp4", poster: "/showcase/merlin.jpg", title: "Ongoing Projects", client: "Merlin Group", lang: "EN" },
+    ],
   },
   {
-    src: "/showcase/jev.mp4",
-    poster: "/showcase/jev.jpg",
-    title: "Tech explainer · 75s",
-    client: "Claude Code plugin",
-    idea: "Explain this new Claude Code plugin in a short that developers will actually watch.",
+    id: "location-films",
+    eyebrow: "Cinematic",
+    title: "Location & project films",
+    blurb: "Satellite zoom-ins, real nearby-place research, and premium 4K footage, from the whole world down to the plot.",
+    items: [
+      { ...p("orbit-sky-royale"), title: "Sky Royale", client: "Orbit Group", landscape: true },
+      { ...p("orbit-urban-park"), title: "Urban Park", client: "Orbit Group", landscape: true },
+      { ...p("emaar-golf-vale"), title: "Golf Vale", client: "Emaar" },
+    ],
+  },
+  {
+    id: "ugc-ads",
+    eyebrow: "UGC",
+    title: "UGC & creator-style ads",
+    blurb: "Native, scroll-stopping ads that feel like a real person talking. Hooks, pacing, and captions tuned for paid social.",
+    items: [
+      { ...p("woodsmen"), title: "Woodsmen Whiskey", client: "Woodsmen" },
+      { ...p("dogshood"), title: "Dogshood", client: "Dogshood" },
+    ],
+  },
+  {
+    id: "explainers",
+    eyebrow: "Explainers & clips",
+    title: "Tech explainers & podcast clips",
+    blurb: "Sharp, caption-led shorts that turn long conversations and new tools into something people finish watching.",
+    items: [
+      { src: "/showcase/jev.mp4", poster: "/showcase/jev.jpg", title: "Claude Code Plugin", client: "Tech explainer" },
+      { ...p("base360"), title: "Podcast Highlights", client: "Base 360" },
+    ],
   },
 ];
