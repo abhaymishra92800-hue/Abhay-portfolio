@@ -2,8 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import ScrollReveal from "@/components/ScrollReveal";
-import { site, beliefs } from "@/lib/site";
-import { workCategories } from "@/lib/videos";
+import Testimonials from "@/components/Testimonials";
+import { site, beliefs, credibilityStats } from "@/lib/site";
+import { workCategories, longFormVideos } from "@/lib/videos";
 
 export const metadata: Metadata = {
   title: "About",
@@ -18,6 +19,14 @@ const makes = [
   { id: "location-films", icon: "movie", title: "Launch films", desc: "Cinematic project films with satellite zoom-ins and 4K footage." },
   { id: "explainers", icon: "lightbulb", title: "Explainers", desc: "Tech explainers and faceless YouTube channel shorts." },
 ].map((m) => ({ ...m, count: workCategories.find((c) => c.id === m.id)?.items.length ?? 0 }));
+
+makes.push({
+  id: "long-form",
+  icon: "smart_display",
+  title: "YouTube edits",
+  desc: "Long-form episodes, podcasts, and shorts with retention-first pacing.",
+  count: longFormVideos.length,
+});
 
 export default function AboutPage() {
   return (
@@ -36,7 +45,7 @@ export default function AboutPage() {
             <p>
               I&apos;m a freelance video editor based in {site.location}. I make ads and films that are
               built to sell: property ads for real estate developers, UGC-style ads for brands, launch
-              films, and explainers.
+              films, and explainers, plus long-form YouTube edits and shorts.
             </p>
             <p>
               Every video starts with one question: what should the viewer do next? Book a visit, buy,
@@ -70,10 +79,22 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Numbers */}
+      <section className="relative z-10 pb-4">
+        <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto text-center">
+          {credibilityStats.map((s) => (
+            <div key={s.label}>
+              <p className="text-3xl md:text-5xl font-extrabold text-on-surface leading-none mb-1.5">{s.value}</p>
+              <p className="text-[11px] md:text-xs text-on-surface-variant uppercase tracking-wider">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* What I make */}
       <section className="py-12 relative z-10">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-10 text-center">What I make</h2>
+          <h2 className="text-2xl md:text-4xl font-bold text-on-surface mb-8 md:mb-10 text-center">What I make</h2>
         </ScrollReveal>
         <ScrollReveal stagger>
           <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
@@ -81,7 +102,7 @@ export default function AboutPage() {
               <Link
                 key={m.id}
                 href={`/portfolio#${m.id}`}
-                className="reveal group glass-card rounded-3xl p-7 text-center border border-outline-variant/40 hover:border-primary hover:-translate-y-1 hover:shadow-xl transition-all w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]"
+                className="reveal group glass-card rounded-3xl p-7 text-center border border-outline-variant/40 hover:border-primary hover:-translate-y-1 hover:shadow-xl transition-all w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(20%-1.2rem)]"
               >
                 <span className="material-symbols-outlined text-primary text-3xl mb-3 block">{m.icon}</span>
                 <h3 className="text-lg font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">{m.title}</h3>
@@ -93,10 +114,12 @@ export default function AboutPage() {
         </ScrollReveal>
       </section>
 
+      <Testimonials />
+
       {/* How I work */}
       <section className="py-12 relative z-10">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl font-bold text-on-surface mb-10 text-center">How I work</h2>
+          <h2 className="text-2xl md:text-4xl font-bold text-on-surface mb-8 md:mb-10 text-center">How I work</h2>
         </ScrollReveal>
         <ScrollReveal stagger>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
