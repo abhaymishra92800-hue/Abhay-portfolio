@@ -80,7 +80,7 @@ export const beliefs = [
 // Headline numbers, shared by the home and About pages.
 export const credibilityStats = [
   { value: "777+", label: "Videos edited" },
-  { value: "1M+", label: "Audience reach" },
+  { value: "3M+", label: "Audience reach" },
   { value: "30%", label: "Audience retention" },
 ];
 
