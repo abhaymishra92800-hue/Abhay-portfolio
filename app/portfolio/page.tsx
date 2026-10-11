@@ -63,7 +63,7 @@ export default function PortfolioPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-on-surface">Long-form edits</h2>
         </div>
         <VideoGrid videos={longFormVideos} />
-        <div className="text-center mt-14 mb-8">
+        <div id="shorts" className="text-center mt-14 mb-8 scroll-mt-24">
           <p className="text-xs font-bold text-primary uppercase tracking-widest mb-2">Short-form</p>
           <h2 className="text-2xl md:text-3xl font-bold text-on-surface">Shorts &amp; reels</h2>
         </div>

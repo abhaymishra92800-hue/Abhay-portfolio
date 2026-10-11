@@ -17,8 +17,8 @@ const stats = [...credibilityStats, { value: `${projectCount}+`, label: "Ad & fi
 
 // One clip per kind of work, shown behind the profile photo in the hero.
 const heroClips = {
-  ugc: { src: "/portfolio/dogshood.mp4", poster: "/portfolio/dogshood.jpg", title: "UGC ad" },
-  realEstate: { src: "/portfolio/srijan-orizon.mp4", poster: "/portfolio/srijan-orizon.jpg", title: "Real estate ad" },
+  ugc: { src: "/portfolio/hero-ugc.mp4", poster: "/portfolio/dogshood.jpg", title: "UGC ad" },
+  realEstate: { src: "/portfolio/hero-re.mp4", poster: "/portfolio/srijan-orizon.jpg", title: "Real estate ad" },
   short: { src: "/portfolio/hero-short.mp4", poster: "/portfolio/hero-short.jpg", title: "Short-form edit" },
   long: { id: "-SYqXdaZXl8", title: "Long-form edit", start: 90 }, // Circle: Dan Koe interview
 };
@@ -99,15 +99,15 @@ export default function Home() {
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[320px] sm:max-w-md lg:max-w-[480px] aspect-[5/6]">
               <div className="absolute left-0 top-[3%] w-[31%] -rotate-6 opacity-80 z-0">
-                <AutoVideo quiet {...heroClips.short} className="aspect-[9/16] rounded-xl ring-1 ring-white/70 shadow-xl" />
+                <AutoVideo quiet priority {...heroClips.short} className="aspect-[9/16] rounded-xl ring-1 ring-white/70 shadow-xl" />
                 <HeroLabel className="left-1 top-1">Short-form edit</HeroLabel>
               </div>
               <div className="absolute left-[34%] top-0 w-[31%] opacity-70 z-0">
-                <AutoVideo quiet {...heroClips.realEstate} className="aspect-[9/16] rounded-xl ring-1 ring-white/70 shadow-xl" />
+                <AutoVideo quiet priority {...heroClips.realEstate} className="aspect-[9/16] rounded-xl ring-1 ring-white/70 shadow-xl" />
                 <HeroLabel className="left-1 top-1">Real estate ad</HeroLabel>
               </div>
               <div className="absolute right-0 top-[3%] w-[31%] rotate-6 opacity-80 z-0">
-                <AutoVideo quiet {...heroClips.ugc} className="aspect-[9/16] rounded-xl ring-1 ring-white/70 shadow-xl" />
+                <AutoVideo quiet priority {...heroClips.ugc} className="aspect-[9/16] rounded-xl ring-1 ring-white/70 shadow-xl" />
                 <HeroLabel className="left-1 top-1">UGC ad</HeroLabel>
               </div>
               <div className="absolute right-[-3%] bottom-[9%] w-[46%] rotate-3 opacity-90 z-[5]">
@@ -142,10 +142,10 @@ export default function Home() {
               </p>
             </div>
           </ScrollReveal>
-          <WorkShowcase categories={workCategories} initial={6} />
+          <WorkShowcase categories={workCategories} initial={4} />
           <div className="mt-14 text-center">
             <Link href="/portfolio" className="text-sm font-bold text-primary inline-flex items-center gap-1 hover:gap-2 transition-all">
-              See all work
+              See everything in the portfolio
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </Link>
           </div>
@@ -162,19 +162,25 @@ export default function Home() {
               <p className="text-on-surface-variant">Episodes, podcasts, and explainers. Click to play.</p>
             </div>
           </ScrollReveal>
-          <VideoGrid videos={longFormVideos.slice(0, 6)} />
+          <VideoGrid videos={longFormVideos.slice(0, 3)} />
           <div className="mt-6 text-center">
             <Link href="/portfolio#long-form" className="text-sm font-bold text-primary inline-flex items-center gap-1 hover:gap-2 transition-all">
-              See all {longFormVideos.length} videos
+              See all {longFormVideos.length} long-form videos
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </Link>
           </div>
 
-          <div className="text-center mt-14 mb-8">
+          <div id="shorts" className="text-center mt-14 mb-8 scroll-mt-24">
             <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Short-form</p>
             <h2 className="text-3xl md:text-4xl font-bold text-on-surface">Shorts &amp; reels</h2>
           </div>
-          <VideoGrid videos={shortFormVideos} vertical />
+          <VideoGrid videos={shortFormVideos.slice(0, 5)} vertical />
+          <div className="mt-6 text-center">
+            <Link href="/portfolio#shorts" className="text-sm font-bold text-primary inline-flex items-center gap-1 hover:gap-2 transition-all">
+              See all {shortFormVideos.length} shorts
+              <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            </Link>
+          </div>
         </div>
       </section>
 

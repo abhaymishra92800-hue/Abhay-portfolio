@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import AutoVideo from "@/components/AutoVideo";
 import type { Work, WorkCategory } from "@/lib/videos";
 
 // Autoplaying muted previews, grouped by category. One card per project; extra
-// languages become a switch on the card. "Show more" reveals the rest.
+// languages become a switch on the card. With `initial` set (home page) only that many show,
+// plus a link to the full list on /portfolio.
 
 function Card({ w, className = "" }: { w: Work; className?: string }) {
   const [idx, setIdx] = useState(0);
@@ -57,8 +59,7 @@ const tallCls = (hasWide: boolean) =>
     : "w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.7rem)] lg:w-[calc(25%-0.95rem)] xl:w-[calc(20%-1rem)]";
 
 function Category({ c, initial }: { c: WorkCategory; initial?: number }) {
-  const [open, setOpen] = useState(false);
-  const limit = initial && !open ? initial : c.items.length;
+  const limit = initial ?? c.items.length;
   const items = c.items.slice(0, limit);
   const hidden = c.items.length - items.length;
   const hasWide = c.items.some((i) => i.landscape);
@@ -75,19 +76,17 @@ function Category({ c, initial }: { c: WorkCategory; initial?: number }) {
           <Card key={w.title} w={w} className={w.landscape ? wideCls : tallCls(hasWide)} />
         ))}
       </div>
-      {initial !== undefined && c.items.length > initial && (
+      {hidden > 0 && (
         <div className="mt-8 flex justify-center">
-        <button
-          type="button"
-          onClick={() => setOpen((o) => !o)}
-          aria-expanded={open}
-          className="inline-flex items-center gap-1 text-sm font-bold text-primary border border-primary/40 hover:bg-primary hover:text-white px-5 py-2.5 rounded-full transition-colors"
-        >
-          {open ? "Show less" : `Show ${hidden} more`}
-          <span className="material-symbols-outlined text-base" aria-hidden="true">
-            {open ? "expand_less" : "expand_more"}
-          </span>
-        </button>
+          <Link
+            href={`/portfolio#${c.id}`}
+            className="inline-flex items-center gap-1 text-sm font-bold text-primary border border-primary/40 hover:bg-primary hover:text-white px-5 py-2.5 rounded-full transition-colors"
+          >
+            See all {c.items.length}
+            <span className="material-symbols-outlined text-base" aria-hidden="true">
+              arrow_forward
+            </span>
+          </Link>
         </div>
       )}
     </div>
