@@ -9,15 +9,16 @@ type Props = {
   className?: string;
   badge?: string;
   quiet?: boolean; // background use: no sound button
+  priority?: boolean; // above the fold: load the poster and video straight away
 };
 
 // Muted looping preview. The file loads when the card nears the screen, plays
 // while it is mostly visible, and pauses when scrolled away. Tap to hear it.
 // Visitors who prefer reduced motion get the poster and a play button instead.
-export default function AutoVideo({ src, poster, title, className = "", badge, quiet = false }: Props) {
+export default function AutoVideo({ src, poster, title, className = "", badge, quiet = false, priority = false }: Props) {
   const wrap = useRef<HTMLDivElement>(null);
   const video = useRef<HTMLVideoElement>(null);
-  const [near, setNear] = useState(false);
+  const [near, setNear] = useState(priority);
   const [muted, setMuted] = useState(true);
   const [visible, setVisible] = useState(false);
   const [reduced, setReduced] = useState(false);
@@ -34,7 +35,7 @@ export default function AutoVideo({ src, poster, title, className = "", badge, q
       ([e]) => {
         if (e.isIntersecting) setNear(true);
       },
-      { rootMargin: "300px" }
+      { rootMargin: "200px" }
     );
     const play = new IntersectionObserver(
       ([e]) => setVisible(e.isIntersecting),
@@ -59,7 +60,7 @@ export default function AutoVideo({ src, poster, title, className = "", badge, q
   }, [visible, live, src]);
 
   return (
-    <div ref={wrap} className={`relative overflow-hidden bg-black ${className}`}>
+    <div ref={wrap} className={`relative overflow-hidden bg-surface-container ${className}`}>
       {live ? (
         <video
           ref={video}
@@ -68,13 +69,13 @@ export default function AutoVideo({ src, poster, title, className = "", badge, q
           muted={muted}
           loop
           playsInline
-          preload="metadata"
+          preload={priority ? "auto" : "metadata"}
           aria-label={title}
           className="absolute inset-0 w-full h-full object-cover"
         />
       ) : (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={poster} alt={title} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={poster} alt={title} loading={priority ? "eager" : "lazy"} decoding="async" className="absolute inset-0 w-full h-full object-cover" />
       )}
 
       {reduced && !manual ? (
