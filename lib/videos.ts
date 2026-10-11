@@ -127,4 +127,11 @@ export const workCategories: WorkCategory[] = [
       { title: "Why does a phone cost $899?", client: "KnowLayer · faceless channel", versions: [v("knowlayer-phone")], tag: FACELESS },
     ],
   },
+  {
+    id: "podcast-clips",
+    eyebrow: "Podcast clips",
+    title: "Podcast & interview clips",
+    blurb: "Captioned, tightly cut shorts pulled from long conversations, built to stop the scroll.",
+    items: [{ title: "Podcast clip", client: "Short-form edit", versions: [v("podcast-clip5")] }],
+  },
 ];
