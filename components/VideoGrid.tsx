@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import AutoVideo from "@/components/AutoVideo";
 import type { Video } from "@/lib/videos";
 
 type Props = {
@@ -28,7 +29,9 @@ export default function VideoGrid({ videos, vertical = false }: Props) {
           className="group glass-card rounded-2xl overflow-hidden border border-outline-variant/40 hover:-translate-y-1 hover:shadow-xl transition-all bg-surface-container-lowest"
         >
           <div className={`relative ${aspect} bg-black`}>
-            {playing === v.id ? (
+            {v.src ? (
+              <AutoVideo src={v.src} poster={v.poster ?? ""} title={v.title} className="absolute inset-0 w-full h-full" />
+            ) : playing === v.id ? (
               <iframe
                 src={`https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&rel=0`}
                 title={v.title}

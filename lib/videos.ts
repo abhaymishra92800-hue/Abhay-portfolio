@@ -1,6 +1,7 @@
 // Portfolio video library — single source of truth for every video grid on the site.
 
-export type Video = { id: string; title: string; client: string };
+// A Video is a YouTube video (id) or, when `src` is set, a local file that autoplays muted.
+export type Video = { id: string; title: string; client: string; src?: string; poster?: string };
 
 export const longFormVideos: Video[] = [
   { id: "bejvX2uUTDo", title: "Google Just Dropped the Most Insane AI Update Yet (Gemini 3 + AI Studio + Antigravity)", client: "Tim Cakir" },
@@ -23,6 +24,7 @@ export const longFormVideos: Video[] = [
 ];
 
 export const shortFormVideos: Video[] = [
+  { id: "podcast-clip5", title: "Podcast clip", client: "Short-form edit", src: "/portfolio/podcast-clip5.mp4", poster: "/portfolio/podcast-clip5.jpg" },
   { id: "h2O8Gnq7w24", title: "Perplexity DEEP RESEARCH Explained in 1 Minute", client: "Tim Cakir" },
   { id: "TJR9l12hN0I", title: "Battle of the AI Titans: ChatGPT, Gemini 1.5 Pro, and Perplexity Showdown", client: "Tim Cakir" },
   { id: "dD3jLdx2k7A", title: "I Tried ChatGPT for Image Creation and Here's What Happened", client: "Tim Cakir" },
@@ -126,12 +128,5 @@ export const workCategories: WorkCategory[] = [
       { title: "Why is milk at the back of the store?", client: "KnowLayer · faceless channel", versions: [v("knowlayer-milk")], tag: FACELESS },
       { title: "Why does a phone cost $899?", client: "KnowLayer · faceless channel", versions: [v("knowlayer-phone")], tag: FACELESS },
     ],
-  },
-  {
-    id: "podcast-clips",
-    eyebrow: "Podcast clips",
-    title: "Podcast & interview clips",
-    blurb: "Captioned, tightly cut shorts pulled from long conversations, built to stop the scroll.",
-    items: [{ title: "Podcast clip", client: "Short-form edit", versions: [v("podcast-clip5")] }],
   },
 ];
